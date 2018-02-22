@@ -22,8 +22,8 @@ def main():
     base_pair_dict = {"A": "T", "T": "A", "G": "C", "C": "G"}
     
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P3-CaSoD_rosalind_revc.txt"
-    FILEPATHWRITE = "./outputs/P3-CaSoD_output.txt"
+    FILEPATHREAD = "./datasets/P3_REVC-dataset.txt"
+    FILEPATHWRITE = "./outputs/P3_REVC-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:

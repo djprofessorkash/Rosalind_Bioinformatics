@@ -49,8 +49,8 @@ def main():
     """ Returns Fibonacci sum based on number of months (n) and number of rabbit litter pairs (k) """
     
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P4-RaRR_rosalind_fib.txt"
-    FILEPATHWRITE = "./outputs/P4-RaRR_output.txt"
+    FILEPATHREAD = "./datasets/P4_FIB-dataset.txt"
+    FILEPATHWRITE = "./outputs/P4_FIB-output.txt"
 
     with open(FILEPATHREAD, "r") as fr:
         rr_args = fr.read().split(" ")

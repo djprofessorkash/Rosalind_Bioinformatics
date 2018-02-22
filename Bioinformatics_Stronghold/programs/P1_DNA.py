@@ -27,8 +27,8 @@ def main():
     allowed_nucleotides = ["A", "C", "G", "T"]
 
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P1-CDN_rosalind_dna.txt"
-    FILEPATHWRITE = "./outputs/P1-CDN_output.txt"
+    FILEPATHREAD = "./datasets/P1_DNA-dataset.txt"
+    FILEPATHWRITE = "./outputs/P1_DNA-output.txt"
 
     # Reads text data from raw dataset as single-line character string
     with open(FILEPATHREAD, "r") as fr:

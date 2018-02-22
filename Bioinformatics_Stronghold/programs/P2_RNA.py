@@ -20,8 +20,8 @@ STATUS:             Submitted.
 def main():
     """ Returns new string with Ts converted to Us """
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P2-TDiR_rosalind_rna.txt"
-    FILEPATHWRITE = "./outputs/P2-TDiR_output.txt"
+    FILEPATHREAD = "./datasets/P2_RNA-dataset.txt"
+    FILEPATHWRITE = "./outputs/P2_RNA-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
