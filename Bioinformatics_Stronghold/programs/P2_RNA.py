@@ -31,7 +31,7 @@ def main():
     with open(FILEPATHWRITE, "w") as fw:
         fw.write("\n{}\n".format("".join([[nucleotide, "U"][nucleotide == "T"] for nucleotide in nucleotides])))
 
-    return print("\nThe RNA dataset has been processed and the appropriate output has been saved to {}/{}.\n".format(FILEPATHWRITE.split("/")[1], FILEPATHWRITE.split("/")[2]))
+    return print("\nThe RNA dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
 
 if __name__ == "__main__":

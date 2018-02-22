@@ -31,7 +31,7 @@ SAMPLE DATASET:     >Rosalind_6404
                     >Rosalind_0808
                     CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC
                     TGGGAACCTGCGGGCAGTAGGTGGAAT
-                    
+
 SAMPLE OUTPUT:      Rosalind_0808
                     60.919540
 
@@ -40,7 +40,19 @@ STATUS:             Incomplete.
 
 
 def main():
-    """ ... """
+    """ Returns identified DNA string in FASTA format with relatively highest GC content frequency """
+
+    # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
+    FILEPATHREAD = "./datasets/P5_GC-dataset.txt"
+    FILEPATHWRITE = "./outputs/P5_GC-output.txt"
+
+    with open(FILEPATHREAD, "r") as fr:
+        fr.readlines()
+
+    with open(FILEPATHWRITE, "w") as fw:
+        fw.write()
+
+    return print("\nThe GC-content dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
 if __name__ == "__main__":
     main()

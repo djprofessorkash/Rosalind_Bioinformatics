@@ -50,7 +50,7 @@ def main():
     with open(FILEPATHWRITE, "w") as fw:
         fw.write(" ".join(["{}".format(value) for key, value in dictogram.items()]))
         
-    return print("\nThe DNA dataset has been processed and the appropriate output has been saved to {}/{}.\n".format(FILEPATHWRITE.split("/")[1], FILEPATHWRITE.split("/")[2]))
+    return print("\nThe DNA dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
 if __name__ == "__main__":
     main()
