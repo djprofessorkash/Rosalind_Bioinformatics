@@ -39,6 +39,12 @@ STATUS:             Incomplete.
 """
 
 
+from pprint import pprintf              # Remove after program is functional
+
+def dictogram_calculator(dna_string):
+    """ Calculates and returns dictogram from FASTA-formatted DNA string and sets as new value in dictionary """
+    pass
+
 def main():
     """ Returns identified DNA string in FASTA format with relatively highest GC content frequency """
 
@@ -46,9 +52,15 @@ def main():
     FILEPATHREAD = "./datasets/P5_GC-dataset.txt"
     FILEPATHWRITE = "./outputs/P5_GC-output.txt"
 
+    # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        fr.readlines()
+        dna_strings = [line.strip() for line in fr.readlines()]
 
+    return pprint(dna_strings)
+    dna_strings_dict = dict(zip(dna_strings[::2], dna_strings[1::2]))
+    return print(dna_strings_dict)
+
+    # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
         fw.write()
 
