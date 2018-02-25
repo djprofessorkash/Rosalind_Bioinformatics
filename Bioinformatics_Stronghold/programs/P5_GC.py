@@ -39,14 +39,49 @@ STATUS:             Incomplete.
 """
 
 
-from pprint import pprintf              # Remove after program is functional
+def select_best_gc_frequency(dna_gc_dict):
+    """ Selects highest Rosalind DNA strand based on magnitude of 
+    GC-content frequency in strand. """
+    best_dna_strand, best_gc_content = None, 0
 
-def dictogram_calculator(dna_string):
-    """ Calculates and returns dictogram from FASTA-formatted DNA string and sets as new value in dictionary """
-    pass
+    # Iterates through DNA GC dictionary and selects highest GC-content value and matching strand
+    for key, value in dna_gc_dict.items():
+        if value > best_gc_content:
+            best_dna_strand, best_gc_content = key, value
+
+    return "{}\n{}".format(str(best_dna_strand), str(round(best_gc_content, 6)))
+
+def gc_content_calculator(dna_strings):
+    """ Calculates and returns dictogram from FASTA-formatted DNA strings 
+    and sets as new value in returned dictionary. """
+    gc_content, strand_length = 0, len(dna_strings)
+
+    # Iterates through DNA strings and quantifies GC content across strand
+    for base in dna_strings:            
+            if base == "G" or base == "C":
+                gc_content += 1
+
+    return float(100 * (gc_content / strand_length))
+
+def parse_fasta_data(dataset):
+    """ Parses FASTA data into dictionary with Rosalind keys defined as keys
+    and DNA strings defined as values. """
+    dna_dictionary, elements = dict(), dataset.strip().split(">")
+
+    # Iterates through all strands and produces cleaned DNA dictionary of strands
+    for el in elements:
+        if len(el) == 0:
+            continue
+
+        parts = el.split()
+        label, bases = parts[0], "".join(parts[1:])
+        dna_dictionary[label] = bases
+        
+    return dna_dictionary
 
 def main():
-    """ Returns identified DNA string in FASTA format with relatively highest GC content frequency """
+    """ Returns identified DNA string in FASTA format with relatively highest GC content frequency. """
+    dna_strings_dict = dict()
 
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
     FILEPATHREAD = "./datasets/P5_GC-dataset.txt"
@@ -54,15 +89,14 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        dna_strings = [line.strip() for line in fr.readlines()]
-
-    return pprint(dna_strings)
-    dna_strings_dict = dict(zip(dna_strings[::2], dna_strings[1::2]))
-    return print(dna_strings_dict)
+        data = fr.read()
+    
+    # Functionally creates DNA GC content dictionary from raw data
+    dna_gc_dict = dict([(key, gc_content_calculator(value)) for key, value in parse_fasta_data(data).items()])
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write()
+        fw.write(select_best_gc_frequency(dna_gc_dict))
 
     return print("\nThe GC-content dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
