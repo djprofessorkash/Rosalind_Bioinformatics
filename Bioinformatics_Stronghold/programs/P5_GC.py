@@ -54,14 +54,14 @@ def select_best_gc_frequency(dna_gc_dict):
 def gc_content_calculator(dna_strings):
     """ Calculates and returns dictogram from FASTA-formatted DNA strings 
     and sets as new value in returned dictionary. """
-    gc_content, strand_length = 0, len(dna_strings)
+    gc_content, DNA_LENGTH = 0, len(dna_strings)
 
     # Iterates through DNA strings and quantifies GC content across strand
     for base in dna_strings:            
             if base == "G" or base == "C":
                 gc_content += 1
 
-    return float(100 * (gc_content / strand_length))
+    return float(100 * (gc_content / DNA_LENGTH))
 
 def parse_fasta_data(dataset):
     """ Parses FASTA data into dictionary with Rosalind keys defined as keys
