@@ -10,7 +10,7 @@
         <li><del> P2: Transcribing DNA into RNA (RNA)
         <li><del> P3: Complementing a Strand of DNA (REVC)
         <li><del> P4: Rabbits and Recurrence Relations (FIB)
-        <li> P5: Computing GC Content (GC)
+        <li><del> P5: Computing GC Content (GC)
         <li> P6: Counting Point Mutations (HAMM)
         <li> P7: Mendel's First Law (IPRB)
         <li> P8: Translating RNA into Protein (PROT)
