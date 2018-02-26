@@ -11,7 +11,7 @@
         <li><del> P3: Complementing a Strand of DNA (REVC)
         <li><del> P4: Rabbits and Recurrence Relations (FIB)
         <li><del> P5: Computing GC Content (GC)
-        <li> P6: Counting Point Mutations (HAMM)
+        <li><del> P6: Counting Point Mutations (HAMM)
         <li> P7: Mendel's First Law (IPRB)
         <li> P8: Translating RNA into Protein (PROT)
         <li> P9: Finding a Motif in DNA (SUBS)
