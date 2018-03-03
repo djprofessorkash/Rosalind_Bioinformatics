@@ -43,9 +43,36 @@ OUTPUT:             The probability that two randomly selected mating organisms 
 SAMPLE DATASET:     2 2 2
 SAMPLE OUTPUT:      0.78333
 
-STATUS:             Incomplete.
+STATUS:             Submitted.
 """
 
+
+def triangular_number(base):
+    # Checks for integer arguments larger than 2
+    if base < 2:
+        return 0
+    return (base * (base - 1)) / 2
+
+def cumulative_allelic_dominance_probability(k, m, n):
+    allelic_dominance_rates =  [1.0,                        # YY - YY
+                                1.0,                        # YY - Yy
+                                1.0,                        # YY - yy
+                                0.75,                       # Yy - Yy
+                                0.5,                        # Yy - yy
+                                0   ]                       # yy - yy
+    inheritance_frequencies =  [triangular_number(k),
+                                m * k, 
+                                n * k,
+                                triangular_number(m),
+                                m * n,
+                                triangular_number(n)]
+
+    # Creates dot product sum of both lists and sum of second list of frequencies
+    dot_sum = sum([rate * freq for rate, freq in zip(allelic_dominance_rates, inheritance_frequencies)])
+    freq_sum = sum(inheritance_frequencies)
+
+    # Returns probability of choosing allelic child with dominant genotype from all possible parents
+    return dot_sum / freq_sum
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
@@ -55,11 +82,13 @@ def main():
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
         data = fr.read().split(" ")
-    k, m, n = data[0], data[1], data[2]
+
+    # Define input variables as integers before functional call
+    k, m, n = int(data[0]), int(data[1]), int(data[2])
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write()
+        fw.write(str(round(cumulative_allelic_dominance_probability(k, m, n), 5)))
 
     return print("\nThe Mendelian Probability dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
