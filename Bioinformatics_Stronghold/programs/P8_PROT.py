@@ -18,7 +18,7 @@ OUTPUT:             The protein string encoded by s.
 SAMPLE DATASET:     AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA
 SAMPLE OUTPUT:      MAMAPRTEINSTRING
 
-STATUS:             Incomplete.
+STATUS:             Pending.
 """
 
 
