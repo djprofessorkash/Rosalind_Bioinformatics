@@ -33,6 +33,9 @@ STATUS:             Pending.
 """
 
 
+def substring_match(data):
+    return True
+
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
     # FILEPATHREAD = "./datasets/P9_SUBS-dataset.txt"
