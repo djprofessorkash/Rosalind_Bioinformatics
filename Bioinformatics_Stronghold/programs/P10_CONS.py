@@ -67,18 +67,18 @@ SAMPLE OUTPUT:      ATGCAACT
 STATUS:             Pending.
 """
 
-def produce_consensus():
-    pass
+def produce_consensus(parsed_dna_data):
+    return True
 
-def produce_profile():
-    pass
+def produce_profile(parsed_dna_data):
+    return [True, True, True, True]
 
 def parse_fasta_data(dataset):
     """ Parses FASTA data into dictionary with Rosalind keys defined as keys
     and DNA strings defined as values. """
     dna_dictionary, key_value_pairs = dict(), dataset.strip().split(">")
 
-    # Iterates through all strands and produces cleaned DNA dictionary of strands
+    # Iterates through all strands and produces cleaned DNA dictionary of strands and labels
     for pair in key_value_pairs:
         if len(pair) == 0:
             continue
@@ -99,11 +99,14 @@ def main():
     with open(FILEPATHREAD, "r") as fr:
         data = fr.read()
 
-    parse_fasta_data(data)
+    dna_dict = parse_fasta_data(data)
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write()
+        fw.write("\n".join([str(produce_consensus(dna_dict)), str(produce_profile(dna_dict))]))
+
+    return print("\nThe FASTA Profile dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
+    
 
 if __name__ == "__main__":
     main()
