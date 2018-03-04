@@ -29,26 +29,38 @@ SAMPLE DATASET:     GATATATGCATATACTT
                     ATAT
 SAMPLE OUTPUT:      2 4 10
 
-STATUS:             Pending.
+STATUS:             Submitted.
 """
 
 
-def substring_match(data):
-    return True
+def substring_match(s, t):
+    """ Returns stringified list of found indices where pattern exists in text
+    or returns None if no found indices. """
+    assert isinstance(s, str), "\nTEXT IS NOT A STRING: {}\n".format(s)
+    assert isinstance(t, str), "\nPATTERN IS NOT A STRING: {}\n".format(t)
+
+    # Creates list of found indices where target pattern has been located in input text
+    found_indices = [str(index + 1) for index in range(len(s)) if s.find(t, index) == index]
+
+    # Returns joined string of found indices if list has at least one found index
+    if len(found_indices) >= 1:
+        return " ".join(found_indices)
+    return None
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    # FILEPATHREAD = "./datasets/P9_SUBS-dataset.txt"
-    FILEPATHREAD = "./datasets/P9_sample.txt"
+    FILEPATHREAD = "./datasets/P9_SUBS-dataset.txt"
     FILEPATHWRITE = "./outputs/P9_SUBS-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        data = fr.readlines()
+
+    text, pattern = data[0].strip(), data[1].strip()
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write()
+        fw.write(str(substring_match(text, pattern)))
 
     return print("\nThe DNA Substrings dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
