@@ -119,13 +119,16 @@ def main():
         data = list(map(lambda item: item.strip(), fr.readlines()))
 
     dna_dict = parse_fasta_data(data)
-    produce_profile(dna_dict)
+    profile = produce_profile(dna_dict)
 
     # Creates output file and writes appropriate response to file and notifies user
-    # with open(FILEPATHWRITE, "w") as fw:
-    #     fw.write()
+    with open(FILEPATHWRITE, "w") as fw:
+        # fw.write()            # TODO: Write the consensus here
+        for base in profile:
+            profile_data = " ".join([str(el) for el in profile[base]])
+            fw.write("{}: {}\n".format(base, profile_data))
 
-    # return print("\nThe FASTA Profile dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
+    return print("\nThe DNA Consensus dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
     
 
 if __name__ == "__main__":
