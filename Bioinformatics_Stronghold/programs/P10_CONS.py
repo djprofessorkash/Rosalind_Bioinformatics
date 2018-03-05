@@ -58,16 +58,17 @@ SAMPLE DATASET:     >Rosalind_1
                     >Rosalind_7
                     ATGGCACT
 
-# TODO: Fix false representation of consensus for output accuracy
 SAMPLE OUTPUT:      ATGCAACT
                     A: 5 1 0 0 5 5 0 0
                     C: 0 0 1 4 2 0 6 1
                     G: 1 1 6 3 0 1 0 0
                     T: 1 5 0 0 0 1 1 6
 
-STATUS:             Pending.
+STATUS:             Submitted.
 """
 
+# TODO: Implement class architecture around methods
+# TODO: Optimize produce_consensus() and produce_profile() methods
 def produce_consensus(profile):
     """ Returns parsed DNA consensus from DNA FASTA profile matrix. """
     dna_consensus = str()
