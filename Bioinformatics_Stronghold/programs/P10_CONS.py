@@ -57,6 +57,10 @@ SAMPLE DATASET:     >Rosalind_1
                     ATGCCATT
                     >Rosalind_7
                     ATGGCACT
+    for key, value in dictionary:
+        for i in range (len(value)):
+            output_dict[value[i]][i] += 1
+
 
 SAMPLE OUTPUT:      ATGCAACT
                     A: 5 1 0 0 5 5 0 0
@@ -68,14 +72,28 @@ STATUS:             Pending.
 """
 
 def produce_consensus(parsed_dna_data):
+    """ Returns parsed DNA consensus from DNA FASTA profile matrix. """
     return True
 
-def produce_profile(parsed_dna_data):
-    return [True, True, True, True]
+def produce_profile(dna_dict):
+    """ Returns 4 x n profile matrix of counts of nitrogenous base occurrences
+    from DNA FASTA dictionary. """
+    n = 8
+    dna_base_profile = {"A": [0] * n, 
+                        "C": [0] * n, 
+                        "G": [0] * n, 
+                        "T": [0] * n}
+
+    for key, value in dna_dict.items():
+        for index in range(len(value)):
+            dna_base_profile[value[index]][index] += 1
+
+    return dna_base_profile
 
 def parse_fasta_data(dataset):
     """ Parses FASTA data into dictionary with Rosalind keys defined as keys
-    and DNA strings defined as values. """
+    and DNA strings defined as values.\n
+    Returns parsed FASTA data and general DNA strand length. """
     dna_dictionary, key_value_pairs = dict(), dataset.strip().split(">")
 
     # Iterates through all strands and produces cleaned DNA dictionary of strands and labels
@@ -86,7 +104,15 @@ def parse_fasta_data(dataset):
         parts = pair.split()
         label, bases = parts[0], "".join(parts[1:])
         dna_dictionary[label] = bases
-        
+    
+    values = list(dna_dictionary.values())
+
+    # Verify integrity of FASTA DNA strand lengths and raise error if lengths are unequal
+    for index in range(len(values) - 1):
+        current_strand_length, next_strand_length = len(values[index]), len(values[index + 1])
+        if current_strand_length != next_strand_length:
+            raise ValueError("\n\nMISMATCH IN INPUT TEXT LENGTH FOUND. PLEASE VERIFY INTEGRITY OF FASTA DATA.\n")
+
     return dna_dictionary
 
 def main():
@@ -101,11 +127,15 @@ def main():
 
     dna_dict = parse_fasta_data(data)
 
-    # Creates output file and writes appropriate response to file and notifies user
-    with open(FILEPATHWRITE, "w") as fw:
-        fw.write("\n".join([str(produce_consensus(dna_dict)), str(produce_profile(dna_dict))]))
+    produce_profile(dna_dict)
+    # for key in dna_dict:
+    #     print("{}: {}".format(key, dna_dict[key]))
 
-    return print("\nThe FASTA Profile dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
+    # Creates output file and writes appropriate response to file and notifies user
+    # with open(FILEPATHWRITE, "w") as fw:
+    #     fw.write("\n".join([str(produce_consensus(dna_dict)), str(produce_profile(dna_dict))]))
+
+    # return print("\nThe FASTA Profile dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
     
 
 if __name__ == "__main__":
