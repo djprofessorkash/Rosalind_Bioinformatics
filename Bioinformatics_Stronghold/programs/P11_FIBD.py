@@ -24,6 +24,23 @@ SAMPLE OUTPUT:      4
 STATUS:             Pending.
 """
 
+
+from math import sqrt
+
+def k_recurrence_relation(n, k):
+    """ Calculates fibonacci sequence and returns appropriate result. """
+    if n < 40: 
+        if n == 0: 
+            return 0
+        elif n == 1: 
+            return 1
+        else:
+            # Recursive functional call for Fibonacci calculation
+            return k_recurrence_relation(n - 1, k) + k * k_recurrence_relation(n - 2, k)
+    else:
+        # Approximates fibonacci sequence result for runtime
+        return round((1 + sqrt(5))**n - (1 - sqrt(5))**n) / (2**n*sqrt(5))
+
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
     # FILEPATHREAD = "./datasets/P11_FIBD-dataset.txt"
@@ -32,10 +49,13 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        data = fr.read().split(" ")
 
     # Creates output file and writes appropriate response to file and notifies user
     # with open(FILEPATHWRITE, "w") as fw:
     #     fw.write()
 
     return print("\nThe Mortal Fibonacci dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
+
+if __name__ == "__main__":
+    main()

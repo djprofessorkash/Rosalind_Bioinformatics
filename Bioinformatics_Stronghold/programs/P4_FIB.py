@@ -33,7 +33,7 @@ STATUS:             Submitted.
 """
 
 
-from numpy import sqrt
+from math import sqrt
 
 
 def k_recurrence_relation(n, k):
