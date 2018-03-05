@@ -133,7 +133,6 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        # data = list(map(lambda item: item.strip(), fr.readlines()))
         data = fr.read()
 
     # Produces profile and consensus based off of DNA base frequencies

@@ -15,7 +15,7 @@
         <li><del> P7: Mendel's First Law (IPRB)
         <li><del> P8: Translating RNA into Protein (PROT)
         <li><del> P9: Finding a Motif in DNA (SUBS)
-        <li> P10: Consensus and Profile (CONS)
+        <li><del> P10: Consensus and Profile (CONS)
         <li> P11: Mortal Fibonacci Rabbits (FIBD)
         <li> P12: Overlap Graphs (GRPH)
         <li> P13: Calculating Expected Offspring (IEV)
