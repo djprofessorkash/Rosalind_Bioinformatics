@@ -58,6 +58,7 @@ SAMPLE DATASET:     >Rosalind_1
                     >Rosalind_7
                     ATGGCACT
 
+# TODO: Fix false representation of consensus for output accuracy
 SAMPLE OUTPUT:      ATGCAACT
                     A: 5 1 0 0 5 5 0 0
                     C: 0 0 1 4 2 0 6 1
@@ -67,19 +68,31 @@ SAMPLE OUTPUT:      ATGCAACT
 STATUS:             Pending.
 """
 
-def produce_consensus(parsed_dna_data):
+def produce_consensus(profile):
     """ Returns parsed DNA consensus from DNA FASTA profile matrix. """
-    return True
+    dna_consensus = str()
 
-def produce_profile(dna_dict):
+    for base_freqs in list(zip(*profile.values())):
+        if base_freqs[0] >= max(base_freqs[1], base_freqs[2], base_freqs[3]):
+            dna_consensus += "A"
+        elif base_freqs[1] >= max(base_freqs[0], base_freqs[2], base_freqs[3]):
+            dna_consensus += "C"
+        elif base_freqs[2] >= max(base_freqs[0], base_freqs[1], base_freqs[3]):
+            dna_consensus += "G"
+        elif base_freqs[3] >= max(base_freqs[0], base_freqs[1], base_freqs[2]):
+            dna_consensus += "T"
+
+    return dna_consensus
+
+def produce_profile(dna_dict, n=8):
     """ Returns 4 x n profile matrix of counts of nitrogenous base occurrences
     from DNA FASTA dictionary. """
-    n = 8
     dna_base_profile = {"A": [0] * n, 
                         "C": [0] * n, 
                         "G": [0] * n, 
                         "T": [0] * n}
 
+    # Iterates through DNA bases and produces dictionary of frequencies per strand per base
     for key, value in dna_dict.items():
         for index in range(len(value)):
             dna_base_profile[value[index]][index] += 1
@@ -90,10 +103,13 @@ def parse_fasta_data(dataset):
     """ Parses FASTA data into dictionary with Rosalind keys defined as keys
     and DNA strings defined as values.\n
     Returns parsed FASTA data and general DNA strand length. """
-    dna_dict, pairs = dict(), [" ".join([x, y]) for x, y in zip(dataset[0::2], dataset[1::2])]
+    dna_dict, pairs = dict(), dataset.strip().split(">")
 
     # Iterates through all strands and produces cleaned DNA dictionary of strands and labels
     for pair in pairs:
+        if len(pair) == 0:
+            continue
+
         parts = pair.split()
         label, bases = parts[0], "".join(parts[1:])
         dna_dict[label] = bases
@@ -104,9 +120,9 @@ def parse_fasta_data(dataset):
     for index in range(len(values) - 1):
         current_strand_length, next_strand_length = len(values[index]), len(values[index + 1])
         if current_strand_length != next_strand_length:
-            raise ValueError("\n\nMISMATCH IN INPUT TEXT LENGTH FOUND. PLEASE VERIFY INTEGRITY OF FASTA DATA.\n")
+            raise ValueError("\n\nMISMATCH IN INPUT TEXT LENGTH FOUND: {} =/= {}. PLEASE VERIFY INTEGRITY OF FASTA DATA.\n".format(current_strand_length, next_strand_length))
 
-    return dna_dict
+    return dna_dict, current_strand_length
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
@@ -116,14 +132,17 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = list(map(lambda item: item.strip(), fr.readlines()))
+        # data = list(map(lambda item: item.strip(), fr.readlines()))
+        data = fr.read()
 
-    dna_dict = parse_fasta_data(data)
-    profile = produce_profile(dna_dict)
+    # Produces profile and consensus based off of DNA base frequencies
+    dna_dict, n = parse_fasta_data(data)
+    profile = produce_profile(dna_dict, n)
+    consensus = produce_consensus(profile)
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        # fw.write()            # TODO: Write the consensus here
+        fw.write("{}\n".format(consensus))
         for base in profile:
             profile_data = " ".join([str(el) for el in profile[base]])
             fw.write("{}: {}\n".format(base, profile_data))
