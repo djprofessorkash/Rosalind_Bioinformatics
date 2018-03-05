@@ -57,10 +57,6 @@ SAMPLE DATASET:     >Rosalind_1
                     ATGCCATT
                     >Rosalind_7
                     ATGGCACT
-    for key, value in dictionary:
-        for i in range (len(value)):
-            output_dict[value[i]][i] += 1
-
 
 SAMPLE OUTPUT:      ATGCAACT
                     A: 5 1 0 0 5 5 0 0
@@ -94,18 +90,15 @@ def parse_fasta_data(dataset):
     """ Parses FASTA data into dictionary with Rosalind keys defined as keys
     and DNA strings defined as values.\n
     Returns parsed FASTA data and general DNA strand length. """
-    dna_dictionary, key_value_pairs = dict(), dataset.strip().split(">")
+    dna_dict, pairs = dict(), [" ".join([x, y]) for x, y in zip(dataset[0::2], dataset[1::2])]
 
     # Iterates through all strands and produces cleaned DNA dictionary of strands and labels
-    for pair in key_value_pairs:
-        if len(pair) == 0:
-            continue
-
+    for pair in pairs:
         parts = pair.split()
         label, bases = parts[0], "".join(parts[1:])
-        dna_dictionary[label] = bases
+        dna_dict[label] = bases
     
-    values = list(dna_dictionary.values())
+    values = list(dna_dict.values())
 
     # Verify integrity of FASTA DNA strand lengths and raise error if lengths are unequal
     for index in range(len(values) - 1):
@@ -113,7 +106,7 @@ def parse_fasta_data(dataset):
         if current_strand_length != next_strand_length:
             raise ValueError("\n\nMISMATCH IN INPUT TEXT LENGTH FOUND. PLEASE VERIFY INTEGRITY OF FASTA DATA.\n")
 
-    return dna_dictionary
+    return dna_dict
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
@@ -123,17 +116,14 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        data = list(map(lambda item: item.strip(), fr.readlines()))
 
     dna_dict = parse_fasta_data(data)
-
     produce_profile(dna_dict)
-    # for key in dna_dict:
-    #     print("{}: {}".format(key, dna_dict[key]))
 
     # Creates output file and writes appropriate response to file and notifies user
     # with open(FILEPATHWRITE, "w") as fw:
-    #     fw.write("\n".join([str(produce_consensus(dna_dict)), str(produce_profile(dna_dict))]))
+    #     fw.write()
 
     # return print("\nThe FASTA Profile dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
     
