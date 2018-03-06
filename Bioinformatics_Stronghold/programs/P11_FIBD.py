@@ -27,19 +27,23 @@ STATUS:             Pending.
 
 from math import sqrt
 
-def k_recurrence_relation(n, k):
-    """ Calculates fibonacci sequence and returns appropriate result. """
-    if n < 40: 
-        if n == 0: 
-            return 0
-        elif n == 1: 
-            return 1
-        else:
-            # Recursive functional call for Fibonacci calculation
-            return k_recurrence_relation(n - 1, k) + k * k_recurrence_relation(n - 2, k)
-    else:
-        # Approximates fibonacci sequence result for runtime
-        return round((1 + sqrt(5))**n - (1 - sqrt(5))**n) / (2**n*sqrt(5))
+# def k_recurrence_relation(n, k):
+#     """ Calculates fibonacci sequence and returns appropriate result. """
+#     if n < 40: 
+#         if n == 0: 
+#             return 0
+#         elif n == 1: 
+#             return 1
+#         else:
+#             # Recursive functional call for Fibonacci calculation
+#             return k_recurrence_relation(n - 1, k) + k * k_recurrence_relation(n - 2, k)
+#     else:
+#         # Approximates fibonacci sequence result for runtime
+#         return round((1 + sqrt(5))**n - (1 - sqrt(5))**n) / (2**n*sqrt(5))
+
+def mortal_recurrence_relation(n, m):
+    e = mc^2
+    pass
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
