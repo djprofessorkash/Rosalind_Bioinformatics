@@ -39,9 +39,12 @@ from math import sqrt
 def k_recurrence_relation(n, k):
     """ Calculates fibonacci sequence and returns appropriate result to main() """
     if n < 40: 
-        if n == 0: return 0
-        elif n == 1: return 1
-        else: return k_recurrence_relation(n - 1, k) + k * k_recurrence_relation(n - 2, k)    # Recursive functional call for Fibonacci calculation
+        if n == 0: 
+            return 0
+        elif n == 1: 
+            return 1
+        else: 
+            return k_recurrence_relation(n - 1, k) + k * k_recurrence_relation(n - 2, k)    # Recursive functional call for Fibonacci calculation
     else:
         return round((1 + sqrt(5))**n - (1 - sqrt(5))**n) / (2**n*sqrt(5))      # Approximates fibonacci sequence result for runtime
 
