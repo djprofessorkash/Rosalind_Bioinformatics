@@ -24,20 +24,18 @@ SAMPLE OUTPUT:      4
 STATUS:             Pending.
 """
 
-
-# NOTE: It always takes two months (generations) for an infant pair to grow up and have kids.
-
 def mortal_recurrence_relation(n, m):
     """ Calculates fibonacci sequence with mortality rate m and returns total offspring
     after n months. """
+    # TODO: Improve solution to scale with larger numbers in order to solve test case. 
     if n <= 100 or m <= 20:
         if n == 0:
             # Standard Fibonacci Boundary Condition
             return 0
-        elif n == 1:
+        if n == 1:
             # Standard Fibonacci Boundary Condition
             return 1
-        elif n <= m:
+        if n <= m:
             # Standard Fibonacci General Logic
             return mortal_recurrence_relation(n - 1, m) + mortal_recurrence_relation(n - 2, m)
         elif n == m + 1:
@@ -56,11 +54,11 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read().split(" ")
+        n, m = [int(data) for data in fr.read().split(" ")]
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(mortal_recurrence_relation(int(data[0]), int(data[1]))))
+        fw.write(str(mortal_recurrence_relation(n, m)))
 
     return print("\nThe Mortal Fibonacci dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
