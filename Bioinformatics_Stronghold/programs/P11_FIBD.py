@@ -24,6 +24,11 @@ SAMPLE OUTPUT:      4
 STATUS:             Pending.
 """
 
+def mortal_recurrence_relation_polynomial(n, m):
+    """ Calculates Fibonacci sequence with mortality rate m and returns total offspring
+    after n months. (Polynomial Method) """
+    pass
+
 def mortal_recurrence_relation_recursive(n, m):
     """ Calculates Fibonacci sequence with mortality rate m and returns total offspring
     after n months. (Recursive Method)"""
@@ -51,14 +56,20 @@ def mortal_recurrence_relation_iterative(n, m):
     """ Calculates Fibonacci sequence with mortality rate m and returns total offspring
     after n months. (Iterative Method) """
     if n <= 100 or m <= 20:
-        mortal_fibonacci_series = list()
-        if n == 0:
-            mortal_fibonacci_series.append(0)
-        if n == 1:
-            mortal_fibonacci_series.append(1)
-        if n <= m:
+        mortal_fibonacci_series, months_elapsed = [1, 1], 2     # Initializes rabbit pairs
+        while months_elapsed < n:
+            fibrr_iter1, fibrr_iter2 = mortal_fibonacci_series[-2], mortal_fibonacci_series[-1]
 
-        return sum(mortal_fibonacci_series)
+            if months_elapsed < m:
+                mortal_fibonacci_series.append(fibrr_iter1 + fibrr_iter2)
+            elif months_elapsed == m:
+                mortal_fibonacci_series.append(fibrr_iter1 + fibrr_iter2 - 1)
+            else:
+                fibrr_mortal = mortal_fibonacci_series[-(m + 1)]
+                mortal_fibonacci_series.append(fibrr_iter1 + fibrr_iter2 - fibrr_mortal)
+            
+            months_elapsed += 1
+        return mortal_fibonacci_series[-1]
     else:
         raise ValueError("\n\nFUNCTION PARAMETERS ARE TOO LARGE TO HANDLE.\n\nn <= 100 (CURRENT: n = {})\nm <= 20 (CURRENT: m = {})\n".format(n, m))
 
@@ -73,9 +84,9 @@ def main():
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(mortal_recurrence_relation_recursive(n, m)))
+        fw.write(str(mortal_recurrence_relation_iterative(n, m)))
 
-    return print("\nThe Mortal Fibonacci dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
+    return print("\nThe Mortal Rabbits dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 
 if __name__ == "__main__":
     main()
