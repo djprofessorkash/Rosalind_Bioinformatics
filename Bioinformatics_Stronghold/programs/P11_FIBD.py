@@ -88,7 +88,7 @@ def main():
     with open(FILEPATHWRITE, "w") as fw:
         fw.write(str(mortal_recurrence_relation_iterative(n, m)))
 
-    return print("\nThe Mortal Rabbits dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
+    return print("\nThe Mortal Rabbits dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
 if __name__ == "__main__":
     main()
