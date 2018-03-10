@@ -16,7 +16,7 @@
         <li><del> P8: Translating RNA into Protein (PROT)
         <li><del> P9: Finding a Motif in DNA (SUBS)
         <li><del> P10: Consensus and Profile (CONS)
-        <li> P11: Mortal Fibonacci Rabbits (FIBD)
+        <li><del> P11: Mortal Fibonacci Rabbits (FIBD)
         <li> P12: Overlap Graphs (GRPH)
         <li> P13: Calculating Expected Offspring (IEV)
         <li> P14: Finding a Shared Motif (LCSM)

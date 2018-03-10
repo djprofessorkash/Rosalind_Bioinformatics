@@ -40,8 +40,26 @@ OUTPUT:             The expected number of offspring displaying the dominant phe
                     has exactly two offspring.
 
 SAMPLE DATASET:     1 0 0 1 0 1
-
 SAMPLE OUTPUT:      3.5
 
 STATUS:             Pending.
 """
+
+def main():
+    # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
+    FILEPATHREAD = "./datasets/P13_sample.txt"
+    # FILEPATHREAD = "./datasets/P13_IEV-dataset.txt"
+    FILEPATHWRITE = "./outputs/P13_IEV-output.txt"
+
+    # Reads text data from raw dataset as single-line array of characters
+    with open(FILEPATHREAD, "r") as fr:
+        data = fr.read()
+
+    # Creates output file and writes appropriate response to file and notifies user
+    with open(FILEPATHWRITE, "w") as fw:
+        fw.write(str(data))
+
+    return print("\nThe Expected Offspring dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
+
+if __name__ == "__main__":
+    main()
