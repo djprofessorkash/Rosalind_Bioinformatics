@@ -1,0 +1,1 @@
+['>Rosalind_1\n', 'GATTACA\n', '>Rosalind_2\n', 'TAGACCA\n', '>Rosalind_3\n', 'ATACA']
