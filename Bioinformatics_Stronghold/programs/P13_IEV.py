@@ -45,19 +45,28 @@ SAMPLE OUTPUT:      3.5
 STATUS:             Pending.
 """
 
+def expected_value_calculator(dataset):
+    """ Function to calculate total expected dominant values from data. """
+    dominant_genotype_table, expected_value = [1.0, 1.0, 1.0, 0.75, 0.5, 0], 0
+    
+    # Static loop that aggregates dominant gene occurrences from data and data-table
+    for number in range(6):
+        expected_value += 2 * dataset[number] * dominant_genotype_table[number] 
+    return expected_value
+
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P13_sample.txt"
-    # FILEPATHREAD = "./datasets/P13_IEV-dataset.txt"
+    # FILEPATHREAD = "./datasets/P13_IEV-sample.txt"
+    FILEPATHREAD = "./datasets/P13_IEV-dataset.txt"
     FILEPATHWRITE = "./outputs/P13_IEV-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        data = [float(number) for number in fr.read().split(" ")]
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        fw.write(str(expected_value_calculator(data)))
 
     return print("\nThe Expected Offspring dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
