@@ -45,8 +45,8 @@ SAMPLE OUTPUT:      Rosalind_0498 Rosalind_2391
 STATUS:             Pending.
 """
 
-def parse_fasta_data(dataset):
-    """  """
+def _parse_fasta_data(dataset):
+    """ Helper function to appropriately parse FASTA data for usability. """
     parsed_data, strings = list(), dataset.strip().split(">")
 
     for string in strings:
@@ -57,8 +57,11 @@ def parse_fasta_data(dataset):
     return parsed_data
 
 def overlap_graph(data, n):
-    """  """
+    """ Function to iterate over FASTA data and return data pairs with successful overlapping. """
     graph = list()
+
+    # NOTE: Double loop demands high-performance costs - can improve?
+    # Double loop to compare possible key-value pairs among FASTA data
     for key0, val0 in data:
         for key1, val1 in data:
             if key0 != key1 and val0.endswith(val1[:n]):
@@ -67,20 +70,17 @@ def overlap_graph(data, n):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    # FILEPATHREAD = "./datasets/P12_GRPH-sample.txt"
     FILEPATHREAD = "./datasets/P12_GRPH-dataset.txt"
     FILEPATHWRITE = "./outputs/P12_GRPH-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = parse_fasta_data(fr.read())
-
-    graph = overlap_graph(data, 3)
+        data = _parse_fasta_data(fr.read())
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        for match in graph:
-            fw.write("{} {}\n".format(match[0], match[1]))
+        for overlaps in overlap_graph(data, 3):
+            fw.write("{} {}\n".format(overlaps[0], overlaps[1]))
 
     return print("\nThe Overlap Graphs dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
