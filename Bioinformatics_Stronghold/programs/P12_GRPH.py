@@ -63,6 +63,7 @@ def overlap_graph(data, n):
         for key1, val1 in data:
             if key0 != key1 and val0.endswith(val1[:n]):
                 graph.append((key0, key1))
+    return graph
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
@@ -78,46 +79,10 @@ def main():
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        for match in graph:
+            fw.write("{} {}\n".format(match[0], match[1]))
 
     return print("\nThe Overlap Graphs dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
 if __name__ == "__main__":
     main()
-
-
-
-"""
-def overlap_graph(fasta, n):
-    results = []
-
-    dna = parse_fasta(fasta)
-
-    for k1, v1 in dna:
-        for k2, v2 in dna:
-            if k1 != k2 and v1.endswith(v2[:n]):
-                results.append((k1, k2))
-
-    return results
-
-
-if __name__ == "__main__":
-
-    small_dataset = '''
-                    >Rosalind_0498
-                    AAATAAA
-                    >Rosalind_2391
-                    AAATTTT
-                    >Rosalind_2323
-                    TTTTCCC
-                    >Rosalind_0442
-                    AAATCCC
-                    >Rosalind_5013
-                    GGGTGGG
-                    '''
-
-    large_dataset = open('datasets/rosalind_grph.txt').read()
-
-    for edge in overlap_graph(large_dataset, 3):
-        print edge[0], edge[1]
-"""
