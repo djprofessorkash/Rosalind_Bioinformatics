@@ -13,7 +13,7 @@ OUTPUT:             The transcribed RNA string of t.
 SAMPLE DATASET:     GATGGAACTTGACTACGTAAATT
 SAMPLE OUTPUT:      GAUGGAACUUGACUACGUAAAUU
 
-STATUS:             Submitted.
+STATUS:             Submission successful. 
 """
 
 

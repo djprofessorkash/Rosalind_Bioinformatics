@@ -43,7 +43,7 @@ OUTPUT:             The probability that two randomly selected mating organisms 
 SAMPLE DATASET:     2 2 2
 SAMPLE OUTPUT:      0.78333
 
-STATUS:             Submitted.
+STATUS:             Submission successful. 
 """
 
 

@@ -29,7 +29,7 @@ SAMPLE DATASET:     GATATATGCATATACTT
                     ATAT
 SAMPLE OUTPUT:      2 4 10
 
-STATUS:             Submitted.
+STATUS:             Submission successful.
 """
 
 

@@ -42,7 +42,7 @@ OUTPUT:             The expected number of offspring displaying the dominant phe
 SAMPLE DATASET:     1 0 0 1 0 1
 SAMPLE OUTPUT:      3.5
 
-STATUS:             Pending.
+STATUS:             Submission successful.
 """
 
 def expected_value_calculator(dataset):

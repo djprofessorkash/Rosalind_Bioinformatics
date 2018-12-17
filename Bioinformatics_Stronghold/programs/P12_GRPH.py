@@ -42,7 +42,7 @@ SAMPLE OUTPUT:      Rosalind_0498 Rosalind_2391
                     Rosalind_0498 Rosalind_0442
                     Rosalind_2391 Rosalind_2323
 
-STATUS:             Pending.
+STATUS:             Submission successful.
 """
 
 def _parse_fasta_data(dataset):

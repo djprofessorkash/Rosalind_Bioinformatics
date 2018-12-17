@@ -14,18 +14,30 @@ OUTPUT:             Four integers (separated by spaces) counting the respective 
 SAMPLE DATASET:     AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
 SAMPLE OUTPUT:      20 12 17 21
 
-STATUS:             Submitted. 
+STATUS:             Submission successful. 
 """
 
 
-import collections
+from collections import OrderedDict
 
+def count_nucleotides_into_dictogram(total_nucleotides):
+    """ Support function that creates ordered dictionary histogram of nucleotide occurrences. """
+    dictogram, allowed_nucleotides = dict(), ["A", "C", "G", "T"]
+
+    # Builds dictionary-structured histogram of nucleotide frequencies while checking for appropriate permitted nucleotides
+    for nucleotide in total_nucleotides:
+        if nucleotide in allowed_nucleotides:
+            if nucleotide not in dictogram:
+                dictogram[nucleotide] = 1
+            else:
+                dictogram[nucleotide] += 1
+        continue
+
+    # Creates ordered dictionary by key alphabetization and returns values in-line
+    return OrderedDict(sorted(dictogram.items(), key=lambda X: X[0]))
 
 def main():
     """ Returns frequencies of nucleotides in order A-C-G-T """
-    dictogram = dict()
-    allowed_nucleotides = ["A", "C", "G", "T"]
-
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
     FILEPATHREAD = "./datasets/P1_DNA-dataset.txt"
     FILEPATHWRITE = "./outputs/P1_DNA-output.txt"
@@ -34,17 +46,8 @@ def main():
     with open(FILEPATHREAD, "r") as fr:
         nucleotides = fr.read()
 
-    # Builds dictionary-structured histogram of nucleotide frequencies while checking for appropriate permitted nucleotides
-    for nucleotide in nucleotides:
-        if nucleotide in allowed_nucleotides:
-            if nucleotide not in dictogram:
-                dictogram[nucleotide] = 1
-            else:
-                dictogram[nucleotide] += 1
-        continue
-    
-    # Creates ordered dictionary by key alphabetization and returns values in-line
-    dictogram = collections.OrderedDict(sorted(dictogram.items(), key=lambda t: t[0]))
+    # Creates ordered dictionary histogram of nucleotide occurrences
+    dictogram = count_nucleotides_into_dictogram(nucleotides)
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:

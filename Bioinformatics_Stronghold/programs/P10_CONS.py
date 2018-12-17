@@ -64,7 +64,7 @@ SAMPLE OUTPUT:      ATGCAACT
                     G: 1 1 6 3 0 1 0 0
                     T: 1 5 0 0 0 1 1 6
 
-STATUS:             Submitted.
+STATUS:             Submission successful. 
 """
 
 # TODO: Implement class architecture around methods
@@ -128,7 +128,6 @@ def parse_fasta_data(dataset):
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
     FILEPATHREAD = "./datasets/P10-sample.txt"
-    # FILEPATHREAD = "./datasets/P10_CONS-dataset.txt"
     FILEPATHWRITE = "./outputs/P10_CONS-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters

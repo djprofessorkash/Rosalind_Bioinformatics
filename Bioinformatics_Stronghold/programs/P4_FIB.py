@@ -29,7 +29,7 @@ OUTPUT:             The total number of rabbit pairs that will be present after 
 SAMPLE DATASET:     5 3
 SAMPLE OUTPUT:      19
 
-STATUS:             Submitted.
+STATUS:             Submission successful. 
 """
 
 

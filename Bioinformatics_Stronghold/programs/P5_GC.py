@@ -35,7 +35,7 @@ SAMPLE DATASET:     >Rosalind_6404
 SAMPLE OUTPUT:      Rosalind_0808
                     60.919540
 
-STATUS:             Submitted.
+STATUS:             Submission successful. 
 """
 
 
@@ -81,8 +81,6 @@ def parse_fasta_data(dataset):
 
 def main():
     """ Returns identified DNA string in FASTA format with relatively highest GC content frequency. """
-    dna_strings_dict = dict()
-
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
     FILEPATHREAD = "./datasets/P5_GC-dataset.txt"
     FILEPATHWRITE = "./outputs/P5_GC-output.txt"

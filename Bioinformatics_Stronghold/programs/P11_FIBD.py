@@ -21,36 +21,11 @@ OUTPUT:             The total number of pairs of rabbits that will remain after
 SAMPLE DATASET:     6 3
 SAMPLE OUTPUT:      4
 
-STATUS:             Submitted.
+STATUS:             Submission successful.
 """
 
 
-# NOTE: Recursive method quickly breaks down due to timeout at larger values of n and m.
-'''
-def mortal_recurrence_relation_recursive(n, m):
-    """ Calculates Fibonacci sequence with mortality rate m and returns total offspring
-    after n months. (Recursive Method)"""
-    if n <= 100 and m <= 20:
-        if n == 0:
-            # Standard Fibonacci Boundary Condition
-            return 0
-        if n == 1:
-            # Standard Fibonacci Boundary Condition
-            return 1
-        if n <= m:
-            # Standard Fibonacci General Logic
-            return mortal_recurrence_relation_recursive(n - 1, m) + mortal_recurrence_relation_recursive(n - 2, m)
-        elif n == m + 1:
-            # Account for mortality with f(n - (m + 1), m) where n == m, therefore f == -1
-            return mortal_recurrence_relation_recursive(n - 1, m) + mortal_recurrence_relation_recursive(n - 2, m) - 1
-        else:
-            # Account for general mortality with f(n - (m + 1), m) where n != m
-            return mortal_recurrence_relation_recursive(n - 1, m) + mortal_recurrence_relation_recursive(n - 2, m) - mortal_recurrence_relation_recursive(n - (m + 1), m)
-    else:
-        raise ValueError("\n\nFUNCTION PARAMETERS ARE TOO LARGE TO HANDLE.\n\nn <= 100 (CURRENT: n = {})\nm <= 20 (CURRENT: m = {})\n".format(n, m))
-'''
-
-def mortal_recurrence_relation_iterative(n, m):
+def mortal_recurrence_relation_dynamic(n, m):
     """ Calculates Fibonacci sequence with mortality rate m and returns total offspring
     after n months. (Iterative List-Driven Method) """
     if n <= 100 or m <= 20:
@@ -86,7 +61,7 @@ def main():
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(mortal_recurrence_relation_iterative(n, m)))
+        fw.write(str(mortal_recurrence_relation_dynamic(n, m)))
 
     return print("\nThe Mortal Rabbits dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 

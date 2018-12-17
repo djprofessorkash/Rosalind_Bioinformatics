@@ -28,7 +28,7 @@ SAMPLE DATASET:     >Rosalind_1
 
 SAMPLE OUTPUT:      AC
 
-STATUS:             Pending.
+STATUS:             Submission failed: INCORRECT.
 """
 
 def _parse_fasta_data(dataset):
@@ -67,8 +67,8 @@ def sequence_extractor(parsed_data):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P14_LCSM-sample.txt"
-    # FILEPATHREAD = "./datasets/P14_LCSM-dataset.txt"
+    # FILEPATHREAD = "./datasets/P14_LCSM-sample.txt"
+    FILEPATHREAD = "./datasets/P14_LCSM-dataset.txt"
     FILEPATHWRITE = "./outputs/P14_LCSM-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters

@@ -22,7 +22,8 @@ OUTPUT:             The protein string encoded by s.
 SAMPLE DATASET:     AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA
 SAMPLE OUTPUT:      MAMAPRTEINSTRING
 
-STATUS:             Submitted, additional work available.
+STATUS:             Submission successful. 
+ADDENDUM:           Additional work available.
 """
 
 

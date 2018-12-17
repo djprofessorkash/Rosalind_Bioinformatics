@@ -13,7 +13,7 @@ OUTPUT:             The reverse complement of DNA string s.
 SAMPLE DATASET:     AAAACCCGGT
 SAMPLE OUTPUT:      ACCGGGTTTT
 
-STATUS:             Submitted.
+STATUS:             Submission successful. 
 """
 
 

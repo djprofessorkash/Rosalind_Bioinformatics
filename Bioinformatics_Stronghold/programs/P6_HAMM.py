@@ -14,7 +14,7 @@ SAMPLE DATASET:     GAGCCTACTAACGGGAT
 
 SAMPLE OUTPUT:      7
 
-STATUS:             Submitted.
+STATUS:             Submission successful. 
 """
 
 # import difflib as dfb                   # Only implement for extra, easier solution
