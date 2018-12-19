@@ -56,7 +56,6 @@ def expected_value_calculator(dataset):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    # FILEPATHREAD = "./datasets/P13_IEV-sample.txt"
     FILEPATHREAD = "./datasets/P13_IEV-dataset.txt"
     FILEPATHWRITE = "./outputs/P13_IEV-output.txt"
 
