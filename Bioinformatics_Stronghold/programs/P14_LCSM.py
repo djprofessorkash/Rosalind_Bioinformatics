@@ -31,9 +31,7 @@ SAMPLE OUTPUT:      AC
 STATUS:             Submission failed: INCORRECT.
 """
 
-import sys
-sys.path.append("..")
-# from structures import Suffix_Tree
+from supplements import SUPP_STree as STree
 
 def _parse_fasta_data(raw_data):
     line_data = [line.strip() for line in raw_data]
@@ -52,7 +50,9 @@ def main():
     with open(FILEPATHREAD, "r") as fr:
         data = fr.readlines()
 
-    print(_parse_fasta_data(data))
+    generalized_suffix_tree = STree.Suffix_Tree(_parse_fasta_data(data))
+    print("\n> Parsed Data: " + str(_parse_fasta_data(data)))
+    print("\n> Shared Motif: " + generalized_suffix_tree.determine_LCS())
 
     # Creates output file and writes appropriate response to file and notifies user
     # with open(FILEPATHWRITE, "w") as fw:
