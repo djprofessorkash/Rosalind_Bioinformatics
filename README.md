@@ -19,7 +19,7 @@
         <li><del> P11: Mortal Fibonacci Rabbits (FIBD)
         <li><del> P12: Overlap Graphs (GRPH)
         <li><del> P13: Calculating Expected Offspring (IEV)
-        <li> P14: Finding a Shared Motif (LCSM)
+        <li><del> P14: Finding a Shared Motif (LCSM)
         <li> P15: Independent Alleles (LIA)
         <li> P16: Finding a Protein Motif (MPRT)
         <li> P17: Inferring mRNA from Protein (MRNA)
