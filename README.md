@@ -18,7 +18,7 @@
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/grph/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P12_GRPH.py)\] P12: Overlap Graphs (GRPH)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/iev/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P13_IEV.py)\] P13: Calculating Expected Offspring (IEV)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/lcsm/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P14_LCSM.py)\] P14: Finding a Shared Motif (LCSM)
-- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/lia/)\] P15: Independent Alleles (LIA)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/lia/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P15_LIA.py)\] P15: Independent Alleles (LIA)
 - :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/mprt/)\] P16: Finding a Protein Motif (MPRT)
 - :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/mrna/)\] P17: Inferring mRNA from Protein (MRNA)
 - :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/orf/)\] P18: Open Reading Frames (ORF)
