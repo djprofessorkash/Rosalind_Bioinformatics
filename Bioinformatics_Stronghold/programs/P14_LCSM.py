@@ -28,27 +28,33 @@ SAMPLE DATASET:     >Rosalind_1
 
 SAMPLE OUTPUT:      AC
 
-STATUS:             Submission pending.
+STATUS:             Submission successful.
+
+NOTE:               Look into compiling Python code for efficiency.
 """
 
 from supplements import SUPP_STree as STree
 
 def _parse_fasta_data(raw_data):
-    line_data = [line.strip() for line in raw_data]
-    for line_index, line in enumerate(line_data):
-        if line.startswith(">"):
-            del line_data[line_index]
+    line_data, elements = list(), raw_data.strip().split(">")
+
+    for el in elements:
+        if len(el) == 0:
+            continue
+
+        parts = el.split()
+        line_data.append("".join(parts[1:]))
+    
     return line_data
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    # FILEPATHREAD = "./datasets/P14_LCSM-sample.txt"
     FILEPATHREAD = "./datasets/P14_LCSM-dataset.txt"
     FILEPATHWRITE = "./outputs/P14_LCSM-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.readlines()
+        data = fr.read()
 
     # Creates generalized Suffix tree (GST) to hold genomic text structure
     generalized_suffix_tree = STree.Suffix_Tree(_parse_fasta_data(data))
