@@ -26,7 +26,7 @@ PROBLEM:            Two events A and B are independent if Pr(A and B) is equal t
                     [Pr(X is even) × Pr(Y is odd)] + [Pr(X is odd) × Pr(Y is even)], 
                     or [(1/2) × 2] + [(1/2) × 2] = 1/2. 
 
-DATASET:            Two positive integers k (k ≤ 7) and N (N ≤ 2k). In this problem, 
+DATASET:            Two positive integers k (k ≤ 7) and N (N ≤ 2^k). In this problem, 
                     we begin with Tom, who in the 0th generation has genotype Aa Bb. 
                     Tom has two children in the 1st generation, each of whom has 
                     two children, and so on. Each organism always mates with an organism 
@@ -39,22 +39,35 @@ OUTPUT:             The probability that at least N Aa Bb organisms will belong 
 SAMPLE DATASET:     2 1
 SAMPLE OUTPUT:      0.684
 
-STATUS:             Pending.
+STATUS:             Submission successful.
 """
+
+from math import factorial as fact
+
+def determine_binomial_distributive_probability(k, N):
+    """ Calculates cumulative probability across binomial distribution of allelic occurrences. """
+    trials, proba_final = 2**k, int()       # Ascertains total number of trials/allelic occurrences
+    for iterator in range(N, trials + 1):
+        # Calculates the binomial coefficient and main expressions of the binomial equation
+        binomial_coeff = fact(trials) / (fact(iterator) * fact(trials - iterator))
+        p, q = 0.25 ** iterator, 0.75 ** (trials - iterator)
+
+        # Sums the relative probability across each iteration
+        proba_final += binomial_coeff * p * q
+    return round(proba_final, 3)
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P15_sample.txt"
-    # FILEPATHREAD = "./datasets/P15_LIA-dataset.txt"
+    FILEPATHREAD = "./datasets/P15_LIA-dataset.txt"
     FILEPATHWRITE = "./outputs/P15_LIA-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        k, N = [int(value) for value in fr.read().strip().split(" ")]
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        fw.write(str(determine_binomial_distributive_probability(k, N)))
 
     return print("\nThe Independent Alleles dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
