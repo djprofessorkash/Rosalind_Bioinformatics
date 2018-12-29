@@ -6,7 +6,7 @@
 <ul>
 <strong><h3>BIOINFORMATICS STRONGHOLD</h3></strong>
     <ul>
-        <li style="color:gray;">[x] P1: Counting DNA Nucleotides (DNA)
+        <li>:white_check_mark: P1: Counting DNA Nucleotides (DNA)
         <li>[x] P2: Transcribing DNA into RNA (RNA)
         <li>[x] P3: Complementing a Strand of DNA (REVC)
         <li>[x] P4: Rabbits and Recurrence Relations (FIB)
