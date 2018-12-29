@@ -3,30 +3,28 @@
 <p>This is a source code repository for working through bioinformatics algorithmic exercises on <a src="http://rosalind.info/">Rosalind Bioinformatics</a>. Complete with my solutions and data cases.</p>
 
 ## Completed Problems
-<ul>
 <strong><h3>BIOINFORMATICS STRONGHOLD</h3></strong>
-    <ul>
-        <li>:white_check_mark: [problem](http://rosalind.info/problems/dna/) [solution](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P1_DNA.py) P1: Counting DNA Nucleotides (DNA)
-        <li>:white_check_mark: P2: Transcribing DNA into RNA (RNA)
-        <li>:white_check_mark: P3: Complementing a Strand of DNA (REVC)
-        <li>:white_check_mark: P4: Rabbits and Recurrence Relations (FIB)
-        <li>:white_check_mark: P5: Computing GC Content (GC)
-        <li>:white_check_mark: P6: Counting Point Mutations (HAMM)
-        <li>:white_check_mark: P7: Mendel's First Law (IPRB)
-        <li>:white_check_mark: P8: Translating RNA into Protein (PROT)
-        <li>:white_check_mark: P9: Finding a Motif in DNA (SUBS)
-        <li>:white_check_mark: P10: Consensus and Profile (CONS)
-        <li>:white_check_mark: P11: Mortal Fibonacci Rabbits (FIBD)
-        <li>:white_check_mark: P12: Overlap Graphs (GRPH)
-        <li>:white_check_mark: P13: Calculating Expected Offspring (IEV)
-        <li>:white_check_mark: P14: Finding a Shared Motif (LCSM)
-        <li>:large_orange_diamond: P15: Independent Alleles (LIA)
-        <li>:large_orange_diamond: P16: Finding a Protein Motif (MPRT)
-        <li>:large_orange_diamond: P17: Inferring mRNA from Protein (MRNA)
-        <li>:large_orange_diamond: P18: Open Reading Frames (ORF)
-        <li>:large_orange_diamond: P19: Enumerating Gene Orders (PERM)
-        <li>:large_orange_diamond: P20: Calculating Protein Mass (PRTM)
-        <li>:large_orange_diamond: P21: Locating Restriction Sites (REVP)
-        <li>:large_orange_diamond: P22: RNA Splicing (SPLC)
-    </ul>
-</ul>
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/dna/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P1_DNA.py)\] P1: Counting DNA Nucleotides (DNA)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/rna/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P2_RNA.py)\] P2: Transcribing DNA into RNA (RNA)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/revc/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P3_REVC.py)\] P3: Complementing a Strand of DNA (REVC)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/fib/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P4_FIB.py)\] P4: Rabbits and Recurrence Relations (FIB)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/gc/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P5_GC.py)\] P5: Computing GC Content (GC)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/hamm/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P6_HAMM.py)\] P6: Counting Point Mutations (HAMM)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/iprb/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P7_IPRB.py)\] P7: Mendel's First Law (IPRB)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/prot/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P8_PROT.py)\] P8: Translating RNA into Protein (PROT)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/subs/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P9_SUBS.py)\] P9: Finding a Motif in DNA (SUBS)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/cons/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P10_CONS.py)\] P10: Consensus and Profile (CONS)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/fibd/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P11_FIBD.py)\] P11: Mortal Fibonacci Rabbits (FIBD)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/grph/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P12_GRPH.py)\] P12: Overlap Graphs (GRPH)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/iev/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P13_IEV.py)\] P13: Calculating Expected Offspring (IEV)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/lcsm/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P14_LCSM.py)\] P14: Finding a Shared Motif (LCSM)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/lia/)\] P15: Independent Alleles (LIA)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/mprt/)\] P16: Finding a Protein Motif (MPRT)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/mrna/)\] P17: Inferring mRNA from Protein (MRNA)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/orf/)\] P18: Open Reading Frames (ORF)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/perm/)\] P19: Enumerating Gene Orders (PERM)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] P20: Calculating Protein Mass (PRTM)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/revp/)\] P21: Locating Restriction Sites (REVP)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/splc/)\] P22: RNA Splicing (SPLC)
+
+<p><u>Created and maintained by Aakash Sudhakar (2018).</u></p>
