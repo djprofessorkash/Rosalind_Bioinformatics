@@ -20,7 +20,7 @@
         <li>:white_check_mark: P12: Overlap Graphs (GRPH)
         <li>:white_check_mark: P13: Calculating Expected Offspring (IEV)
         <li>:white_check_mark: P14: Finding a Shared Motif (LCSM)
-        <li>:white_large_square: P15: Independent Alleles (LIA)
+        <li>:large_orange_diamond: P15: Independent Alleles (LIA)
         <li>[ ] P16: Finding a Protein Motif (MPRT)
         <li>[ ] P17: Inferring mRNA from Protein (MRNA)
         <li>[ ] P18: Open Reading Frames (ORF)
