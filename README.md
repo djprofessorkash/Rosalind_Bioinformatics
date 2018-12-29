@@ -6,7 +6,7 @@
 <ul>
 <strong><h3>BIOINFORMATICS STRONGHOLD</h3></strong>
     <ul>
-        <li>:white_check_mark: P1: Counting DNA Nucleotides (DNA)
+        <li>:white_check_mark: [problem](http://rosalind.info/problems/dna/) [solution](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P1_DNA.py) P1: Counting DNA Nucleotides (DNA)
         <li>:white_check_mark: P2: Transcribing DNA into RNA (RNA)
         <li>:white_check_mark: P3: Complementing a Strand of DNA (REVC)
         <li>:white_check_mark: P4: Rabbits and Recurrence Relations (FIB)
@@ -21,12 +21,12 @@
         <li>:white_check_mark: P13: Calculating Expected Offspring (IEV)
         <li>:white_check_mark: P14: Finding a Shared Motif (LCSM)
         <li>:large_orange_diamond: P15: Independent Alleles (LIA)
-        <li>[ ] P16: Finding a Protein Motif (MPRT)
-        <li>[ ] P17: Inferring mRNA from Protein (MRNA)
-        <li>[ ] P18: Open Reading Frames (ORF)
-        <li>[ ] P19: Enumerating Gene Orders (PERM)
-        <li>[ ] P20: Calculating Protein Mass (PRTM)
-        <li>[ ] P21: Locating Restriction Sites (REVP)
-        <li>[ ] P22: RNA Splicing (SPLC)
+        <li>:large_orange_diamond: P16: Finding a Protein Motif (MPRT)
+        <li>:large_orange_diamond: P17: Inferring mRNA from Protein (MRNA)
+        <li>:large_orange_diamond: P18: Open Reading Frames (ORF)
+        <li>:large_orange_diamond: P19: Enumerating Gene Orders (PERM)
+        <li>:large_orange_diamond: P20: Calculating Protein Mass (PRTM)
+        <li>:large_orange_diamond: P21: Locating Restriction Sites (REVP)
+        <li>:large_orange_diamond: P22: RNA Splicing (SPLC)
     </ul>
 </ul>
