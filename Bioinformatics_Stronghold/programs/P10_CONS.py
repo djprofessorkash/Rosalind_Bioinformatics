@@ -94,7 +94,7 @@ def produce_profile(dna_dict, n=8):
                         "T": [0] * n}
 
     # Iterates through DNA bases and produces dictionary of frequencies per strand per base
-    for key, value in dna_dict.items():
+    for _, value in dna_dict.items():
         for index in range(len(value)):
             dna_base_profile[value[index]][index] += 1
 
