@@ -1,12 +1,11 @@
 # Rosalind Bioinformatics
 
-<p>This is a source code repository for working through bioinformatics algorithmic exercises on <a src="http://rosalind.info/">Rosalind Bioinformatics</a>. Complete with my solutions and data cases.</p>
+<p>This is a source code repository for working through bioinformatics algorithmic exercises on <a src="http://rosalind.info/">Rosalind Bioinformatics</a>.<br>Complete with my solutions and data cases.</p>
 
 ## Problems (Stronghold, Armory)
 
----
-
 <strong><h3>BIOINFORMATICS STRONGHOLD</h3></strong>
+<p>The Bioinformatics Stronghold contains challenging CS problems that demand custom algorithmic solutions.</p>
 
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/dna/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P1_DNA.py)\] P1: Counting DNA Nucleotides (DNA)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/rna/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P2_RNA.py)\] P2: Transcribing DNA into RNA (RNA)
@@ -34,8 +33,9 @@
 ---
 
 <strong><h3>BIOINFORMATICS ARMORY</h3></strong>
+<p>The Bioinformatics Armory is an assortment of keystone CS problems that mandate the use of comprehensive genomic sequencing libraries to solve.</p>
 
-- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/ini/)\] \[[PROGRESS](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Armory/programs/P1_INI.py)\] P1: Introduction to the Bioinformatics Armory (INI)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/ini/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Armory/programs/P1_INI.py)\] P1: Introduction to the Bioinformatics Armory (INI)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/dbpr/)\] P2: Introduction to Protein Databases (DBPR)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/gbk/)\] P3: GenBank Introduction (GBK)
 
