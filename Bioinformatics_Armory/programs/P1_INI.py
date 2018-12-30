@@ -30,7 +30,7 @@ SAMPLE DATASET:     AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTC
 
 SAMPLE OUTPUT:      20 12 17 21
 
-STATUS:             In progress.
+STATUS:             Submission successful.
 
 PYTHON SHORTCUT:    Our default choice for existing functions and modules to analyze 
                     biological data is BioPython, a set of freely available tools 
