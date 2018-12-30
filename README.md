@@ -27,4 +27,4 @@
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/revp/)\] P21: Locating Restriction Sites (REVP)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/splc/)\] P22: RNA Splicing (SPLC)
 
-<p><u>Created and maintained by Aakash Sudhakar (2018).</u></p>
+<p><u>Created and maintained by Aakash (:heavy_dollar_sign:) Sudhakar (2018).</u></p>
