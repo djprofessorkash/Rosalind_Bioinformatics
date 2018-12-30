@@ -20,11 +20,11 @@
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/lcsm/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P14_LCSM.py)\] P14: Finding a Shared Motif (LCSM)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/lia/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P15_LIA.py)\] P15: Independent Alleles (LIA)
 - :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/mprt/)\] \[[PROGRESS](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P16_MPRT.py)\] P16: Finding a Protein Motif (MPRT)
-- :large_blue_circle: \[[PROBLEM](http://rosalind.info/problems/mrna/)\] P17: Inferring mRNA from Protein (MRNA)
-- :large_blue_circle: \[[PROBLEM](http://rosalind.info/problems/orf/)\] P18: Open Reading Frames (ORF)
-- :large_blue_circle: \[[PROBLEM](http://rosalind.info/problems/perm/)\] P19: Enumerating Gene Orders (PERM)
-- :large_blue_circle: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] P20: Calculating Protein Mass (PRTM)
-- :large_blue_circle: \[[PROBLEM](http://rosalind.info/problems/revp/)\] P21: Locating Restriction Sites (REVP)
-- :large_blue_circle: \[[PROBLEM](http://rosalind.info/problems/splc/)\] P22: RNA Splicing (SPLC)
+- :radio_button: \[[PROBLEM](http://rosalind.info/problems/mrna/)\] P17: Inferring mRNA from Protein (MRNA)
+- :radio_button: \[[PROBLEM](http://rosalind.info/problems/orf/)\] P18: Open Reading Frames (ORF)
+- :radio_button: \[[PROBLEM](http://rosalind.info/problems/perm/)\] P19: Enumerating Gene Orders (PERM)
+- :radio_button: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] P20: Calculating Protein Mass (PRTM)
+- :radio_button: \[[PROBLEM](http://rosalind.info/problems/revp/)\] P21: Locating Restriction Sites (REVP)
+- :radio_button: \[[PROBLEM](http://rosalind.info/problems/splc/)\] P22: RNA Splicing (SPLC)
 
 <p><u>Created and maintained by Aakash Sudhakar (2018).</u></p>
