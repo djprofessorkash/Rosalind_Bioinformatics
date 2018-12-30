@@ -4,8 +4,9 @@ CONTRIBUTOR:        Aakash Sudhakar
 
 PROBLEM:            To allow for the presence of its varying forms, a protein motif 
                     is represented by a shorthand as follows: [XY] means "either X or Y" 
-                    and {X} means "any amino acid except X." For example, 
-                    the N-glycosylation motif is written as N{P}[ST]{P}.
+                    and {X} means "any amino acid except X." 
+                    
+                    For example, the N-glycosylation motif is written as N{P}[ST]{P}.
 
                     You can see the complete description and features of a particular 
                     protein by its access ID "uniprot_id" in the UniProt database, 
@@ -41,22 +42,41 @@ SAMPLE OUTPUT:      B5ZC00
                     P20840_SAG1_YEAST
                     79 109 135 248 306 348 364 402 485 501 614
 
-STATUS:             Pending.
+STATUS:             In progress.
 """
+
+import urllib.request as req
+
+def _grab_html_fasta_data(protein_IDs):
+    """ Grabs parsed FASTA data from HTML links and stores to dictionary. """
+    pro_dict = dict()
+    for proID in protein_IDs:
+        proURL = "http://www.uniprot.org/uniprot/{}.fasta".format(proID)
+        url_data = req.urlopen(proURL)
+        html = "".join(url_data.read().decode("utf-8").split("\n")[1:])
+        pro_dict[proID] = html
+    return pro_dict
+
+# TODO: Complete function to grab N-glycosylation motif locations across parsed FASTA data.
+def get_motif_locations_across_fasta(fasta_bank):
+    """ Determines locations of motifs across FASTA values using algorithmic substring-searching. """
+    return fasta_bank
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P16_sample.txt"
+    FILEPATHREAD = "./datasets/P16_MPRT-sample.txt"
     # FILEPATHREAD = "./datasets/P16_MPRT-dataset.txt"
     FILEPATHWRITE = "./outputs/P16_MPRT-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        data = [value.strip() for value in fr.readlines()]
+
+    output_format = get_motif_locations_across_fasta(_grab_html_fasta_data(data))
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        fw.write(str(output_format))
 
     return print("\nThe Protein Motifs dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
