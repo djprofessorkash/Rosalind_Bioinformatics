@@ -45,6 +45,7 @@ SAMPLE OUTPUT:      B5ZC00
 STATUS:             In progress.
 """
 
+import re
 import urllib.request as req
 
 def _grab_html_fasta_data(protein_IDs):
@@ -60,7 +61,24 @@ def _grab_html_fasta_data(protein_IDs):
 # TODO: Complete function to grab N-glycosylation motif locations across parsed FASTA data.
 def get_motif_locations_across_fasta(fasta_bank):
     """ Determines locations of motifs across FASTA values using algorithmic substring-searching. """
-    return fasta_bank
+    regex = re.compile("(?=N[^P][ST][^P])")
+
+    for seqID, sequence in fasta_bank.items():
+        matches = regex.finditer(sequence)
+        if matches:
+            print("\n{}".format(seqID))
+            # print(sequence)
+            for match in matches:
+                # print("\npos: ", match.pos)
+                # print("re: ", match.re)
+                # print("regs: ", match.regs)
+                # print("subseq: ", sequence[match.start():match.start()+4])
+                if type(match.pos) is None:
+                    print("")
+                else:
+                    print("{}\t".format(match.start() + 1), end="")
+        else:
+            print(seqID, "No motif found.")
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
@@ -72,11 +90,12 @@ def main():
     with open(FILEPATHREAD, "r") as fr:
         data = [value.strip() for value in fr.readlines()]
 
-    output_format = get_motif_locations_across_fasta(_grab_html_fasta_data(data))
+    # Sends FASTA dictionary to get_motifs() --> dict-value iterable must be WITHIN get_motifs()
+    return print(get_motif_locations_across_fasta(_grab_html_fasta_data(data)))
 
     # Creates output file and writes appropriate response to file and notifies user
-    with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(output_format))
+    # with open(FILEPATHWRITE, "w") as fw:
+    #     fw.write(str(output_format))
 
     return print("\nThe Protein Motifs dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
