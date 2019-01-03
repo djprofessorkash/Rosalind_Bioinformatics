@@ -97,13 +97,12 @@ def generate_all_protein_sequences(dna_sequence):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P18_ORF-sample.txt"
-    # FILEPATHREAD = "./datasets/P18_ORF-dataset.txt"
+    FILEPATHREAD = "./datasets/P18_ORF-dataset.txt"
     FILEPATHWRITE = "./outputs/P18_ORF-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.readlines()[-1].replace("T", "U")
+        data = "".join(line.strip() for line in fr.readlines()[1:]).replace("T", "U")
 
     protein_seq_for, protein_seq_rev = generate_all_protein_sequences(data), generate_all_protein_sequences(_produce_reverse_complement_strand(data))
 
