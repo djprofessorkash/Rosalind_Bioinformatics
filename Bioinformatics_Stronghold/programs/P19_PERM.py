@@ -20,22 +20,31 @@ SAMPLE OUTPUT:      6
                     3 1 2
                     3 2 1
 
-STATUS:             Pending.
+STATUS:             In progress.
 """
+
+from itertools import permutations as perm
+
+def generate_gene_order_permutations(n):
+    numerical_set = [integer for integer in range(1, n + 1)]
+    return list(perm(numerical_set))
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P19_sample.txt"
+    FILEPATHREAD = "./datasets/P19_PERM-sample.txt"
     # FILEPATHREAD = "./datasets/P19_PERM-dataset.txt"
     FILEPATHWRITE = "./outputs/P19_PERM-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        n = int(fr.read())
+
+    gene_orders = generate_gene_order_permutations(n)
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        for permutation in gene_orders:
+            fw.write(" ".join(str(integer) for integer in permutation) + "\n")
 
     return print("\nThe Gene Orders dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
