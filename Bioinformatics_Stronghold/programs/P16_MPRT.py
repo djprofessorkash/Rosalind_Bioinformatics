@@ -46,11 +46,13 @@ STATUS:             In progress.
 """
 
 import re
-import urllib.request as req
+from collections import OrderedDict
+from urllib import request as req
 
 def _grab_html_fasta_data(protein_IDs):
     """ Grabs parsed FASTA data from HTML links and stores to dictionary. """
     pro_dict = dict()
+    # Grabs and decodes protein data online and stores in dictionary
     for proID in protein_IDs:
         proURL = "http://www.uniprot.org/uniprot/{}.fasta".format(proID)
         url_data = req.urlopen(proURL)
@@ -58,27 +60,34 @@ def _grab_html_fasta_data(protein_IDs):
         pro_dict[proID] = html
     return pro_dict
 
+def _format_output_motifs(motif_locations):
+    """ Converts unstructured motif location data into structured output format. """
+    output_format = str()
+    # Structures motif positional data into final output format
+    for motifID, motif_positions in motif_locations.items():
+        output_format += "{}\n".format(motifID)
+        output_format += " ".join([str(motif_pos) for motif_pos in motif_positions])
+        output_format += "\n"
+    return output_format
+
 # TODO: Complete function to grab N-glycosylation motif locations across parsed FASTA data.
 def get_motif_locations_across_fasta(fasta_bank):
     """ Determines locations of motifs across FASTA values using algorithmic substring-searching. """
-    regex = re.compile("(?=N[^P][ST][^P])")
-
+    regex, motif_locs = re.compile("(?=N[^P][ST][^P])"), OrderedDict()
     for seqID, sequence in fasta_bank.items():
+        # Grabs overlapping RegEx matches across motif data
         matches = regex.finditer(sequence)
+        # Generates motif positions data from RegEx generator
         if matches:
-            print("\n{}".format(seqID))
-            # print(sequence)
+            motifs = list()
             for match in matches:
-                # print("\npos: ", match.pos)
-                # print("re: ", match.re)
-                # print("regs: ", match.regs)
-                # print("subseq: ", sequence[match.start():match.start()+4])
-                if type(match.pos) is None:
-                    print("")
-                else:
-                    print("{}\t".format(match.start() + 1), end="")
-        else:
-            print(seqID, "No motif found.")
+                motifs.append(match.start() + 1)
+            # Adds RegEx-matched motif positions in unstructured motifs dictionary
+            if not motifs:
+                continue
+            else:
+                motif_locs[seqID] = motifs
+    return motif_locs
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
@@ -91,11 +100,11 @@ def main():
         data = [value.strip() for value in fr.readlines()]
 
     # Sends FASTA dictionary to get_motifs() --> dict-value iterable must be WITHIN get_motifs()
-    return print(get_motif_locations_across_fasta(_grab_html_fasta_data(data)))
+    output_data = get_motif_locations_across_fasta(_grab_html_fasta_data(data))
 
     # Creates output file and writes appropriate response to file and notifies user
-    # with open(FILEPATHWRITE, "w") as fw:
-    #     fw.write(str(output_format))
+    with open(FILEPATHWRITE, "w") as fw:
+        fw.write(_format_output_motifs(output_data)[:-1])
 
     return print("\nThe Protein Motifs dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
