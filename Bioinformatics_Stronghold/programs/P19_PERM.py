@@ -26,13 +26,13 @@ STATUS:             In progress.
 from itertools import permutations as perm
 
 def generate_gene_order_permutations(n):
+    """ Generates permutations from all possible gene orders denoted by integer n. """
     numerical_set = [integer for integer in range(1, n + 1)]
     return list(perm(numerical_set))
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P19_PERM-sample.txt"
-    # FILEPATHREAD = "./datasets/P19_PERM-dataset.txt"
+    FILEPATHREAD = "./datasets/P19_PERM-dataset.txt"
     FILEPATHWRITE = "./outputs/P19_PERM-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
@@ -43,6 +43,7 @@ def main():
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
+        fw.write(str(len(gene_orders)) + "\n")
         for permutation in gene_orders:
             fw.write(" ".join(str(integer) for integer in permutation) + "\n")
 
