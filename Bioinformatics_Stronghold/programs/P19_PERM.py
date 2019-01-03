@@ -20,7 +20,7 @@ SAMPLE OUTPUT:      6
                     3 1 2
                     3 2 1
 
-STATUS:             In progress.
+STATUS:             Submission successful.
 """
 
 from itertools import permutations as perm
@@ -35,11 +35,12 @@ def main():
     FILEPATHREAD = "./datasets/P19_PERM-dataset.txt"
     FILEPATHWRITE = "./outputs/P19_PERM-output.txt"
 
-    # Reads text data from raw dataset as single-line array of characters
+    # Reads text data from raw dataset as single integer
     with open(FILEPATHREAD, "r") as fr:
-        n = int(fr.read())
+        N = int(fr.read())
 
-    gene_orders = generate_gene_order_permutations(n)
+    # Generates all possible gene order permutations from given input integer
+    gene_orders = generate_gene_order_permutations(N)
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:

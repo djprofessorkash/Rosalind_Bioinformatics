@@ -17,12 +17,15 @@ OUTPUT:             The total weight of P. Consult a monoisotopic mass table.
 SAMPLE DATASET:     SKADYEK
 SAMPLE OUTPUT:      821.392
 
-STATUS:             Pending.
+STATUS:             In progress.
 """
+
+def calculate_protein_sequence_mass(protein_sequence):
+    pass
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P20_sample.txt"
+    FILEPATHREAD = "./datasets/P20_PRTM-sample.txt"
     # FILEPATHREAD = "./datasets/P20_PRTM-dataset.txt"
     FILEPATHWRITE = "./outputs/P20_PRTM-output.txt"
 
@@ -32,7 +35,7 @@ def main():
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        fw.write(str(calculate_protein_sequence_mass(data)))
 
     return print("\nThe Protein Masses dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
