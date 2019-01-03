@@ -29,6 +29,9 @@
 - :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] \[[PROGRESS](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P20_PRTM.py)\]P20: Calculating Protein Mass (PRTM)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/revp/)\] P21: Locating Restriction Sites (REVP)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/splc/)\] P22: RNA Splicing (SPLC)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/lexf/)\] P23: Enumerating k-mers Lexicographically (LEXF)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/lgis/)\] P24: Longest Increasing Subsequence (LGIS)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/long/)\] P25: Genome Assembly as Shortest Superstring (LONG)
 
 ---
 
