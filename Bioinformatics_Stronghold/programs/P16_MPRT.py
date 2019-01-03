@@ -42,14 +42,14 @@ SAMPLE OUTPUT:      B5ZC00
                     P20840_SAG1_YEAST
                     79 109 135 248 306 348 364 402 485 501 614
 
-STATUS:             In progress.
+STATUS:             Submission successful.
 """
 
 import re
 from collections import OrderedDict
 from urllib import request as req
 
-def _grab_html_fasta_data(protein_IDs):
+def _grab_HTML_FASTA_data(protein_IDs):
     """ Grabs parsed FASTA data from HTML links and stores to dictionary. """
     pro_dict = dict()
     # Grabs and decodes protein data online and stores in dictionary
@@ -71,10 +71,10 @@ def _format_output_motifs(motif_locations):
     return output_format
 
 # TODO: Complete function to grab N-glycosylation motif locations across parsed FASTA data.
-def get_motif_locations_across_fasta(fasta_bank):
+def get_motif_locations_across_FASTA(motifs_bank):
     """ Determines locations of motifs across FASTA values using algorithmic substring-searching. """
     regex, motif_locs = re.compile("(?=N[^P][ST][^P])"), OrderedDict()
-    for seqID, sequence in fasta_bank.items():
+    for seqID, sequence in motifs_bank.items():
         # Grabs overlapping RegEx matches across motif data
         matches = regex.finditer(sequence)
         # Generates motif positions data from RegEx generator
@@ -82,7 +82,7 @@ def get_motif_locations_across_fasta(fasta_bank):
             motifs = list()
             for match in matches:
                 motifs.append(match.start() + 1)
-            # Adds RegEx-matched motif positions in unstructured motifs dictionary
+            #  Adds RegEx-matched motif positions in unstructured motifs dictionary
             if not motifs:
                 continue
             else:
@@ -91,8 +91,7 @@ def get_motif_locations_across_fasta(fasta_bank):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P16_MPRT-sample.txt"
-    # FILEPATHREAD = "./datasets/P16_MPRT-dataset.txt"
+    FILEPATHREAD = "./datasets/P16_MPRT-dataset.txt"
     FILEPATHWRITE = "./outputs/P16_MPRT-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
@@ -100,7 +99,7 @@ def main():
         data = [value.strip() for value in fr.readlines()]
 
     # Sends FASTA dictionary to get_motifs() --> dict-value iterable must be WITHIN get_motifs()
-    output_data = get_motif_locations_across_fasta(_grab_html_fasta_data(data))
+    output_data = get_motif_locations_across_FASTA(_grab_HTML_FASTA_data(data))
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
