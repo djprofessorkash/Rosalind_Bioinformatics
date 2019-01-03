@@ -26,7 +26,7 @@
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/mrna/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P17_MRNA.py)\] P17: Inferring mRNA from Protein (MRNA)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/orf/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P18_ORF.py)\] P18: Open Reading Frames (ORF)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/perm/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P19_PERM.py)\] P19: Enumerating Gene Orders (PERM)
-- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] \[[PROGRESS](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P20_PRTM.py)\]P20: Calculating Protein Mass (PRTM)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] \[[PROGRESS](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P20_PRTM.py)\] P20: Calculating Protein Mass (PRTM)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/revp/)\] P21: Locating Restriction Sites (REVP)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/splc/)\] P22: RNA Splicing (SPLC)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/lexf/)\] P23: Enumerating k-mers Lexicographically (LEXF)
