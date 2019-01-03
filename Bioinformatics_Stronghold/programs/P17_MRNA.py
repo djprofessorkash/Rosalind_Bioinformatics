@@ -29,7 +29,7 @@ OUTPUT:             The total number of different RNA strings from which the pro
 SAMPLE DATASET:     MA
 SAMPLE OUTPUT:      12
 
-STATUS:             Pending.
+STATUS:             Submission successful.
 """
 
 def _codon_dictogram_constructor():
@@ -68,8 +68,7 @@ def sequence_variations_calculator(protein_chain):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P17_MRNA-sample.txt"
-    # FILEPATHREAD = "./datasets/P17_MRNA-dataset.txt"
+    FILEPATHREAD = "./datasets/P17_MRNA-dataset.txt"
     FILEPATHWRITE = "./outputs/P17_MRNA-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
