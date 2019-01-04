@@ -26,12 +26,17 @@
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/mrna/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P17_MRNA.py)\] P17: Inferring mRNA from Protein (MRNA)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/orf/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P18_ORF.py)\] P18: Open Reading Frames (ORF)
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/perm/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P19_PERM.py)\] P19: Enumerating Gene Orders (PERM)
-- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] \[[PROGRESS](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P20_PRTM.py)\] P20: Calculating Protein Mass (PRTM)
-- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/revp/)\] P21: Locating Restriction Sites (REVP)
+- :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/prtm/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P20_PRTM.py)\] P20: Calculating Protein Mass (PRTM)
+- :large_orange_diamond: \[[PROBLEM](http://rosalind.info/problems/revp/)\] \[[PROGRESS](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Stronghold/programs/P21_REVP.py)\] P21: Locating Restriction Sites (REVP)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/splc/)\] P22: RNA Splicing (SPLC)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/lexf/)\] P23: Enumerating k-mers Lexicographically (LEXF)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/lgis/)\] P24: Longest Increasing Subsequence (LGIS)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/long/)\] P25: Genome Assembly as Shortest Superstring (LONG)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/pmch/)\] P26: Perfect Matchings and RNA Secondary Structures (PMCH)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/pper/)\] P27: Partial Permutations (PPER)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/prob/)\] P28: Introduction to Random Strings (PROB)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/sign/)\] P29: Enumerating Oriented Gene Orderings (SIGN)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/tree/)\] P30: Completing a Tree (TREE)
 
 ---
 
@@ -41,5 +46,18 @@
 - :white_check_mark: \[[PROBLEM](http://rosalind.info/problems/ini/)\] \[[SOLUTION](https://github.com/AakashSudhakar/Rosalind_Bioinformatics/blob/master/Bioinformatics_Armory/programs/P1_INI.py)\] P1: Introduction to the Bioinformatics Armory (INI)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/dbpr/)\] P2: Introduction to Protein Databases (DBPR)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/gbk/)\] P3: GenBank Introduction (GBK)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/frmt/)\] P4: Data Formats (FRMT)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/meme/)\] P5: New Motif Discovery (MEME)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/need/)\] P6: Pairwise Global Alignment (NEED)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/tfsq/)\] P7: FASTQ Format Introduction (TFSQ)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/phre/)\] P8: Read Quality Distribution (PHRE)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/ptra/)\] P9: Protein Translation (PTRA)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/filt/)\] P10: Read Filtration by Quality (FILT)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/rvco/)\] P11: Complementing a Strand of DNA (RVCO)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/subo/)\] P12: Suboptimal Local Alignment (SUBO)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/bphr/)\] P13: Base Quality Distribution (BPHR)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/clus/)\] P14: Global Multiple Alignment (CLUS)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/orfr/)\] P15: Finding Genes with ORFs (ORFR)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/bfil/)\] P16: Base Filtration by Quality (BFIL)
 
 <p><u>Created and maintained by Aakash Sudhakar. :heavy_dollar_sign: 2018.</u></p>
