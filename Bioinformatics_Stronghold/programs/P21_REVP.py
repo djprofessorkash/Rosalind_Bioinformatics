@@ -23,7 +23,7 @@ SAMPLE OUTPUT:      4 6
                     20 6
                     21 4
 
-STATUS:             Submission failed.
+STATUS:             Submission failed: sample data passes but real data case fails.
 """
 
 def produce_complement_strands(subsequence):
@@ -56,7 +56,8 @@ def locate_restriction_sites(original_sequence):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"
+    FILEPATHREAD = "./datasets/P21_REVP-sample.txt"         # Simple Sample Case
+    # FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"      # Rosalind Live Test Case
     FILEPATHWRITE = "./outputs/P21_REVP-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
