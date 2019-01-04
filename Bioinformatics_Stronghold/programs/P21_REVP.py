@@ -58,7 +58,7 @@ def locate_restriction_sites(original_sequence):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"      # Rosalind Live Test Case
+    FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"
     FILEPATHWRITE = "./outputs/P21_REVP-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
