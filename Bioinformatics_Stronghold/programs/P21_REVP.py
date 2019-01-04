@@ -23,22 +23,51 @@ SAMPLE OUTPUT:      4 6
                     20 6
                     21 4
 
-STATUS:             Pending.
+STATUS:             Submission failed.
 """
+
+def produce_complement_strands(subsequence):
+    """ Produces pair of original and reverse complement DNA strands. """
+    reverse_sequence, BASE_COMPLEMENT_TABLE = reversed(subsequence), {
+        "A": "T",
+        "T": "A",
+        "G": "C",
+        "C": "G"
+    }
+    return "".join([BASE_COMPLEMENT_TABLE[base] for base in reverse_sequence])
+
+def _is_reverse_palindrome(subsequence):
+    """ Checks if input DNA subsequence is reverse palindrome. """
+    return subsequence == produce_complement_strands(subsequence)
+
+def locate_restriction_sites(original_sequence):
+    """ Locates restriction site positions and lengths of reverse palindromes across paired complements. """
+    restrictions_sites, sequence_size = list(), len(original_sequence)
+    LOCAL_MIN, LOCAL_MAX = 4, 9
+    for iterator in range(sequence_size):
+        for jterator in range(LOCAL_MIN, LOCAL_MAX):
+            if iterator + jterator > sequence_size:
+                continue
+            subsequence = original_sequence[iterator:iterator+jterator]
+            if _is_reverse_palindrome(subsequence):
+                restrictions_sites.append((iterator + 1, jterator))
+    return restrictions_sites
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P21_sample.txt"
-    # FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"
+    FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"
     FILEPATHWRITE = "./outputs/P21_REVP-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.read()
+        data = str("".join(line.strip() for line in fr.readlines()[1:]))
+
+    # Computes restriction sites across DNA sequence using reverse complement determination
+    restriction_sites = locate_restriction_sites(data)
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        fw.write("\n".join(["\t".join(map(str, item)) for item in restriction_sites]))
 
     return print("\nThe Restriction Sites dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
