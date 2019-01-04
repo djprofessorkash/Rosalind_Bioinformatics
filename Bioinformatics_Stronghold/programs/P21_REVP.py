@@ -23,7 +23,9 @@ SAMPLE OUTPUT:      4 6
                     20 6
                     21 4
 
-STATUS:             Submission failed: sample data passes but real data case fails.
+STATUS:             Submission successful.
+
+NOTE:               Shoutout to Rohan Mishra for his masterful algorithmic debugging help. 
 """
 
 def produce_complement_strands(subsequence):
@@ -44,7 +46,7 @@ def _is_reverse_palindrome(subsequence):
 def locate_restriction_sites(original_sequence):
     """ Locates restriction site positions and lengths of reverse palindromes across paired complements. """
     restrictions_sites, sequence_size = list(), len(original_sequence)
-    LOCAL_MIN, LOCAL_MAX = 4, 9
+    LOCAL_MIN, LOCAL_MAX = 4, 13
     for iterator in range(sequence_size):
         for jterator in range(LOCAL_MIN, LOCAL_MAX):
             if iterator + jterator > sequence_size:
@@ -56,8 +58,7 @@ def locate_restriction_sites(original_sequence):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P21_REVP-sample.txt"         # Simple Sample Case
-    # FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"      # Rosalind Live Test Case
+    FILEPATHREAD = "./datasets/P21_REVP-dataset.txt"      # Rosalind Live Test Case
     FILEPATHWRITE = "./outputs/P21_REVP-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
