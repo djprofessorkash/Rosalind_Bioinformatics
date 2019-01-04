@@ -40,6 +40,7 @@ def _is_reverse_palindrome(subsequence):
     """ Checks if input DNA subsequence is reverse palindrome. """
     return subsequence == produce_complement_strands(subsequence)
 
+# TODO: Fix function so it can detect multiple restriction sites at same position
 def locate_restriction_sites(original_sequence):
     """ Locates restriction site positions and lengths of reverse palindromes across paired complements. """
     restrictions_sites, sequence_size = list(), len(original_sequence)
@@ -67,7 +68,7 @@ def main():
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write("\n".join(["\t".join(map(str, item)) for item in restriction_sites]))
+        fw.write("\n".join([" ".join(map(str, item)) for item in restriction_sites]))
 
     return print("\nThe Restriction Sites dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
