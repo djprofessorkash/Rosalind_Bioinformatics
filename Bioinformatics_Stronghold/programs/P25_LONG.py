@@ -30,13 +30,46 @@ SAMPLE DATASET:     >Rosalind_56
 
 SAMPLE OUTPUT:      ATTAGACCTGCCGGAATAC
 
-STATUS:             Pending.
+STATUS:             Submission successful.
 """
+
+def _parse_FASTA_data(dataset):
+    """ Parses FASTA data into dictionary with Rosalind keys defined as keys
+    and DNA strings defined as values. """
+    substrings, elements = list(), dataset.strip().split(">")
+    # Iterates through all strands and produces cleaned DNA dictionary of strands
+    for el in elements:
+        if len(el) == 0:
+            continue
+        parts = el.split()
+        bases = "".join(parts[1:])
+        substrings.append(bases)
+    return substrings
+
+# TODO: Improve function runtime by eliminating recursion depth on callstack
+def construct_shortest_superstring(substrings, accumulator=""):
+    """ Constructs shortest superstring synthesized from substring components. """
+    if len(substrings) == 0:
+        return accumulator
+    elif len(accumulator) == 0:
+        accumulator = substrings.pop(0)
+        return construct_shortest_superstring(substrings, accumulator)
+    else:
+        for iterator in range(len(substrings)):
+            substring = substrings[iterator]
+            substring_size = len(substring)
+            for jterator in range(round(substring_size / 2)):
+                displacement = substring_size - jterator
+                if accumulator.startswith(substring[jterator:]):
+                    substrings.pop(iterator)
+                    return construct_shortest_superstring(substrings, substring[:jterator] + accumulator)
+                if accumulator.endswith(substring[:displacement]):
+                    substrings.pop(iterator)
+                    return construct_shortest_superstring(substrings, accumulator + substring[displacement:])
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P25_LONG-sample.txt"
-    # FILEPATHREAD = "./datasets/P25_LONG-dataset.txt"
+    FILEPATHREAD = "./datasets/P25_LONG-dataset.txt"
     FILEPATHWRITE = "./outputs/P25_LONG-output.txt"
 
     # Reads text data from raw dataset
@@ -45,7 +78,7 @@ def main():
     
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(data))
+        fw.write(str(construct_shortest_superstring(_parse_FASTA_data(data))))
 
     return print("\nThe Shortest Superstrings dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
