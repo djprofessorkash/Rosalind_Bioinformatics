@@ -90,7 +90,6 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        # data = [seq.strip() for seq in fr.readlines()[1::2]]
         data = fr.read()
     
     # Creates output file and writes appropriate response to file and notifies user
