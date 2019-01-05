@@ -32,16 +32,11 @@ SAMPLE OUTPUT:      2 4 10
 STATUS:             Submission successful.
 """
 
-
 def substring_match(s, t):
     """ Returns stringified list of found indices where pattern exists in text
     or returns None if no found indices. """
-    assert isinstance(s, str), "\nTEXT IS NOT A STRING: {}\n".format(s)
-    assert isinstance(t, str), "\nPATTERN IS NOT A STRING: {}\n".format(t)
-
     # Creates list of found indices where target pattern has been located in input text
     found_indices = [str(index + 1) for index in range(len(s)) if s.find(t, index) == index]
-
     # Returns joined string of found indices if list has at least one found index
     if len(found_indices) >= 1:
         return " ".join(found_indices)
@@ -54,7 +49,7 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = fr.readlines()
+        data = str(fr.readlines())
 
     text, pattern = data[0].strip(), data[1].strip()
 

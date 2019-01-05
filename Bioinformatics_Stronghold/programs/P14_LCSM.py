@@ -37,14 +37,11 @@ from supplements import SUPP_STree as STree
 
 def _parse_fasta_data(raw_data):
     line_data, elements = list(), raw_data.strip().split(">")
-
     for el in elements:
         if len(el) == 0:
             continue
-
         parts = el.split()
         line_data.append("".join(parts[1:]))
-    
     return line_data
 
 def main():

@@ -36,7 +36,7 @@
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/pper/)\] P27: Partial Permutations (PPER)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/prob/)\] P28: Introduction to Random Strings (PROB)
 - :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/sign/)\] P29: Enumerating Oriented Gene Orderings (SIGN)
-- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/tree/)\] P30: Completing a Tree (TREE)
+- :small_blue_diamond: \[[PROBLEM](http://rosalind.info/problems/sseq/)\] P30: Finding a Spliced Motif (SSEQ)
 
 ---
 

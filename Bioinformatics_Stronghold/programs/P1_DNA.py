@@ -20,24 +20,22 @@ STATUS:             Submission successful.
 
 from collections import OrderedDict
 
+# TODO: Improve function by creating custom collections.OrderedDict() data structure
 def count_nucleotides_into_dictogram(total_nucleotides):
     """ Support function that creates ordered dictionary histogram of nucleotide occurrences. """
-    dictogram, allowed_nucleotides = dict(), ["A", "C", "G", "T"]
-
+    dictogram, ALLOWED_NUCLEOTIDES = dict(), ["A", "C", "G", "T"]
     # Builds dictionary-structured histogram of nucleotide frequencies while checking for appropriate permitted nucleotides
     for nucleotide in total_nucleotides:
-        if nucleotide in allowed_nucleotides:
+        if nucleotide in ALLOWED_NUCLEOTIDES:
             if nucleotide not in dictogram:
                 dictogram[nucleotide] = 1
             else:
                 dictogram[nucleotide] += 1
         continue
-
     # Creates ordered dictionary by key alphabetization and returns values in-line
     return OrderedDict(sorted(dictogram.items(), key=lambda X: X[0]))
 
 def main():
-    """ Returns frequencies of nucleotides in order A-C-G-T """
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
     FILEPATHREAD = "./datasets/P1_DNA-dataset.txt"
     FILEPATHWRITE = "./outputs/P1_DNA-output.txt"

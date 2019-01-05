@@ -48,7 +48,6 @@ STATUS:             Submission successful.
 def expected_value_calculator(dataset):
     """ Function to calculate total expected dominant values from data. """
     dominant_genotype_table, expected_value = [1.0, 1.0, 1.0, 0.75, 0.5, 0], 0
-    
     # Static loop that aggregates dominant gene occurrences from data and data-table
     for number in range(6):
         expected_value += 2 * dataset[number] * dominant_genotype_table[number] 

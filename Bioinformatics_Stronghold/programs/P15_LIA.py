@@ -44,6 +44,7 @@ STATUS:             Submission successful.
 
 from math import factorial as fact
 
+# TODO: Improve function by creating custom math.factorial() data structure
 def determine_binomial_distributive_probability(k, N):
     """ Calculates cumulative probability across binomial distribution of allelic occurrences. """
     trials, proba_final = 2**k, int()       # Ascertains total number of trials/allelic occurrences
@@ -51,7 +52,6 @@ def determine_binomial_distributive_probability(k, N):
         # Calculates the binomial coefficient and main expressions of the binomial equation
         binomial_coeff = fact(trials) / (fact(iterator) * fact(trials - iterator))
         p, q = 0.25 ** iterator, 0.75 ** (trials - iterator)
-
         # Sums the relative probability across each iteration
         proba_final += binomial_coeff * p * q
     return round(proba_final, 3)

@@ -49,6 +49,7 @@ import re
 from collections import OrderedDict
 from urllib import request as req
 
+# TODO: Improve function by testing different URL reader libraries against urllib.request()
 def _grab_HTML_FASTA_data(protein_IDs):
     """ Grabs parsed FASTA data from HTML links and stores to dictionary. """
     pro_dict = dict()
@@ -70,7 +71,7 @@ def _format_output_motifs(motif_locations):
         output_format += "\n"
     return output_format
 
-# TODO: Complete function to grab N-glycosylation motif locations across parsed FASTA data.
+# TODO: Improve function by creating custom re.compile(), re.finditer(), OrderedDict() data structures
 def get_motif_locations_across_FASTA(motifs_bank):
     """ Determines locations of motifs across FASTA values using algorithmic substring-searching. """
     regex, motif_locs = re.compile("(?=N[^P][ST][^P])"), OrderedDict()

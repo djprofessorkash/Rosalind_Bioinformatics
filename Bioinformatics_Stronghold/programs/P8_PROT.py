@@ -26,9 +26,8 @@ STATUS:             Submission successful.
 ADDENDUM:           Additional work available.
 """
 
-
 def protein_translation_with_table(data):
-    translation_table = {
+    TRANSLATION_TABLE = {
         "UUU": "F",      "CUU": "L",      "AUU": "I",      "GUU": "V",
         "UUC": "F",      "CUC": "L",      "AUC": "I",      "GUC": "V",
         "UUA": "L",      "CUA": "L",      "AUA": "I",      "GUA": "V",
@@ -49,10 +48,11 @@ def protein_translation_with_table(data):
     protein_chain = str()
     for iterator in range(0, len(data), 3):
         codon = data[iterator:iterator+3]
-        if translation_table[codon] == "Stop":
+        if TRANSLATION_TABLE[codon] == "Stop":
             return protein_chain
-        protein_chain += translation_table[codon]
+        protein_chain += TRANSLATION_TABLE[codon]
 
+# TODO: Produce function that stores translation lookup table into tree data structure
 def protein_translation_with_tree(data):
     pass
 

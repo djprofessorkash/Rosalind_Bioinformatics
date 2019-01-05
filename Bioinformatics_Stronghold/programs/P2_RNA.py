@@ -16,6 +16,9 @@ SAMPLE OUTPUT:      GAUGGAACUUGACUACGUAAAUU
 STATUS:             Submission successful. 
 """
 
+def transcribe_DNA_into_RNA(nucleotide_collection):
+    """ Transcribes DNA into RNA strand. """
+    return "".join([[nucleotide, "U"][nucleotide == "T"] for nucleotide in nucleotide_collection])
 
 def main():
     """ Returns new string with Ts converted to Us """
@@ -25,11 +28,11 @@ def main():
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        nucleotides = fr.read()
+        original_strand = fr.read()
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write("\n{}\n".format("".join([[nucleotide, "U"][nucleotide == "T"] for nucleotide in nucleotides])))
+        fw.write("\n{}\n".format(transcribe_DNA_into_RNA(original_strand)))
 
     return print("\nThe RNA dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 

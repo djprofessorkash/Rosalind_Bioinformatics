@@ -17,7 +17,9 @@ SAMPLE OUTPUT:      7
 STATUS:             Submission successful. 
 """
 
-# import difflib as dfb                   # Only implement for extra, easier solution
+def calculate_Hamming_distance(S, T):
+    """ Calculates Hamming distance using DNA string inputs. """
+    return sum(1 for char_S, char_T in zip(S, T) if char_S != char_T)
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
@@ -27,14 +29,13 @@ def main():
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
         data = fr.readlines()
-        s, t = data[0], data[1]
-
-    # Generate Hamming distance for point mutation count between two input strings
-    Hamming_distance = sum(1 for char_s, char_t in zip(s, t) if char_s != char_t)
+        
+    # Grabs DNA string parameters from dataset
+    S, T = data[0], data[1]
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(Hamming_distance))
+        fw.write(str(calculate_Hamming_distance(S, T)))
 
     return print("\nThe DNA Hamming Distance dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 

@@ -35,7 +35,7 @@ STATUS:             Submission successful.
 
 from math import sqrt
 
-
+# TODO: Improves function by creating custom math.sqrt() data structure
 def k_recurrence_relation(n, k):
     """ Calculates fibonacci sequence and returns appropriate result to main() """
     if n < 40: 
@@ -54,10 +54,10 @@ def main():
     FILEPATHWRITE = "./outputs/P4_FIB-output.txt"
 
     with open(FILEPATHREAD, "r") as fr:
-        rr_args = fr.read().split(" ")
+        data = fr.read().split(" ")
 
     with open(FILEPATHWRITE, "w") as fw:
-        fw.write(str(k_recurrence_relation(int(rr_args[0]), int(rr_args[1]))))
+        fw.write(str(k_recurrence_relation(int(data[0]), int(data[1]))))
 
     return print("\nThe recurrence relational dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE))
 

@@ -73,13 +73,11 @@ def generate_all_protein_sequences(dna_sequence):
     """ Generates amino acid sequence from formatted codon sequence. """
     protein_sequences, codon_indices = list(), list()
     SEQ_SIZE = len(dna_sequence)
-
     # Initializes DNA sequence scanner for amino acid generation
     for iterator in range(SEQ_SIZE):
         amino_acid = codon_translator(dna_sequence[iterator:iterator+3])
         if amino_acid and amino_acid == "M":
             codon_indices.append(iterator)
-
     # Loops over DNA sequence and produces amino acid sequence
     for iterator in codon_indices:
         protein_sequence, stop_codon_found = str(), False

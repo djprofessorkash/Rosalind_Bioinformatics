@@ -46,6 +46,7 @@ def _grab_relevant_data(dataset):
     """ Grabs relevant symbols and permutative constant for future lexicographic generation. """
     return sorted(list(dataset[0].strip().split(" "))), int(dataset[1])
 
+# TODO: Improve function by creating custom itertools.product() data structure
 def generate_ordered_lexicograph(symbol_collection, N):
     """ Generates lexicographically ordered sequence of symbol permutations based on input parameters. """
     return ["".join(item) for item in product(symbol_collection, repeat=N)]
@@ -63,7 +64,7 @@ def main():
     with open(FILEPATHWRITE, "w") as fw:
         fw.write("\n".join(generate_ordered_lexicograph(symbols, N)))
 
-    return print("\nThe RNA Splicing dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
+    return print("\nThe Lexicographic Sorting dataset has been processed and the appropriate output has been saved to {}.\n".format(FILEPATHWRITE[2:]))
 
 if __name__ == "__main__":
     main()

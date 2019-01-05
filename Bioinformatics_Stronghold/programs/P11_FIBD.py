@@ -30,11 +30,9 @@ def mortal_recurrence_relation_dynamic(n, m):
     after n months. (Iterative List-Driven Method) """
     if n <= 100 or m <= 20:
         mortal_fibonacci_series, months_elapsed = [1, 1], 2     # Initializes rabbit pairs
-
         # Checks whether all generations have been iterated over
         while months_elapsed < n:
             fibrr_iter1, fibrr_iter2 = mortal_fibonacci_series[-2], mortal_fibonacci_series[-1]
-
             if months_elapsed < m:
                 # Standard Fibonacci general logic
                 mortal_fibonacci_series.append(fibrr_iter1 + fibrr_iter2)

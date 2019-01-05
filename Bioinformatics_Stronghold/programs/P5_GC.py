@@ -38,45 +38,37 @@ SAMPLE OUTPUT:      Rosalind_0808
 STATUS:             Submission successful. 
 """
 
-
 def select_best_gc_frequency(dna_gc_dict):
     """ Selects highest Rosalind DNA strand based on magnitude of 
     GC-content frequency in strand. """
     best_dna_strand, best_gc_content = None, 0
-
     # Iterates through DNA GC dictionary and selects highest GC-content value and matching strand
     for key, value in dna_gc_dict.items():
         if value > best_gc_content:
             best_dna_strand, best_gc_content = key, value
-
     return "{}\n{}".format(str(best_dna_strand), str(round(best_gc_content, 6)))
 
 def gc_content_calculator(dna_strings):
     """ Calculates and returns dictogram from FASTA-formatted DNA strings 
     and sets as new value in returned dictionary. """
     gc_content, DNA_LENGTH = 0, len(dna_strings)
-
     # Iterates through DNA strings and quantifies GC content across strand
     for base in dna_strings:            
             if base == "G" or base == "C":
                 gc_content += 1
-
     return float(100 * (gc_content / DNA_LENGTH))
 
-def parse_fasta_data(dataset):
+def _parse_fasta_data(dataset):
     """ Parses FASTA data into dictionary with Rosalind keys defined as keys
     and DNA strings defined as values. """
     dna_dictionary, elements = dict(), dataset.strip().split(">")
-
     # Iterates through all strands and produces cleaned DNA dictionary of strands
     for el in elements:
         if len(el) == 0:
             continue
-
         parts = el.split()
         label, bases = parts[0], "".join(parts[1:])
         dna_dictionary[label] = bases
-        
     return dna_dictionary
 
 def main():
@@ -90,7 +82,7 @@ def main():
         data = fr.read()
     
     # Functionally creates DNA GC content dictionary from raw data
-    dna_gc_dict = dict([(key, gc_content_calculator(value)) for key, value in parse_fasta_data(data).items()])
+    dna_gc_dict = dict([(key, gc_content_calculator(value)) for key, value in _parse_fasta_data(data).items()])
 
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:

@@ -48,7 +48,6 @@ STATUS:             Submission successful.
 def _parse_fasta_data(dataset):
     """ Helper function to appropriately parse FASTA data for usability. """
     parsed_data, strings = list(), dataset.strip().split(">")
-
     for string in strings:
         if len(string):
             components = string.split()
@@ -56,11 +55,10 @@ def _parse_fasta_data(dataset):
             parsed_data.append((key, value))
     return parsed_data
 
+# TODO: Improve function by improving double loop across graph
 def overlap_graph(data, n):
     """ Function to iterate over FASTA data and return data pairs with successful overlapping. """
     graph = list()
-
-    # NOTE: Double loop demands high-performance costs - can improve?
     # Double loop to compare possible key-value pairs among FASTA data
     for key0, val0 in data:
         for key1, val1 in data:

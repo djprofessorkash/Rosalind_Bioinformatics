@@ -46,7 +46,6 @@ SAMPLE OUTPUT:      0.78333
 STATUS:             Submission successful. 
 """
 
-
 def triangular_number(base):
     # Checks for integer arguments larger than 2
     if base < 2:
@@ -66,11 +65,9 @@ def cumulative_allelic_dominance_probability(k, m, n):
                                 triangular_number(m),
                                 m * n,
                                 triangular_number(n)]
-
     # Creates dot product sum of both lists and sum of second list of frequencies
     dot_sum = sum([rate * freq for rate, freq in zip(allelic_dominance_rates, inheritance_frequencies)])
     freq_sum = sum(inheritance_frequencies)
-
     # Returns probability of choosing allelic child with dominant genotype from all possible parents
     return dot_sum / freq_sum
 

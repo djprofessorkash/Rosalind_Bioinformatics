@@ -25,6 +25,7 @@ STATUS:             Submission successful.
 
 from itertools import permutations as perm
 
+# TODO: Improve function by creating custom itertools.perm() data structure
 def generate_gene_order_permutations(n):
     """ Generates permutations from all possible gene orders denoted by integer n. """
     numerical_set = [integer for integer in range(1, n + 1)]
