@@ -21,13 +21,23 @@ SAMPLE DATASET:     >Rosalind_10
 
 SAMPLE OUTPUT:      MVYIADKQHVASREAYGHMFKVCA
 
-STATUS:             Pending.
+STATUS:             Submission successful.
 """
 
+# TODO: Improve function by making code more readable and efficient.
 def _restructure_dataset(dataset, GENOME_LABELS):
     """ Restructures dataset into dictionary of main sequence and intron subsequences. """
-    dataset_formatted = dict()
-    dataset_formatted[GENOME_LABELS[0]], dataset_formatted[GENOME_LABELS[1]] = dataset[0], dataset[1:]
+    dataset_formatted, elements = dict(), dataset.strip().split(">")
+    for index, element in enumerate(elements[1:]):
+        components = element.split()
+        current_sequence = "".join(components[1:])
+        if index == 0:
+            dataset_formatted[GENOME_LABELS[0]] = current_sequence
+        else:
+            if GENOME_LABELS[1] not in dataset_formatted:
+                dataset_formatted[GENOME_LABELS[1]] = [current_sequence]
+            else:
+                dataset_formatted[GENOME_LABELS[1]].append(current_sequence)
     return dataset_formatted
 
 # TODO: Improve function by conserving raw sequence without duplicating original data.
@@ -75,13 +85,13 @@ def _codon_translator(codon):
 
 def main():
     # NOTE: Requires being in parent repo ('pwd' must return up to directory '/Rosalind_Bioinformatics/Bioinformatics_Stronghold')
-    FILEPATHREAD = "./datasets/P22_SPLC-sample.txt"
-    # FILEPATHREAD = "./datasets/P22_SPLC-dataset.txt"
+    FILEPATHREAD = "./datasets/P22_SPLC-dataset.txt"
     FILEPATHWRITE = "./outputs/P22_SPLC-output.txt"
 
     # Reads text data from raw dataset as single-line array of characters
     with open(FILEPATHREAD, "r") as fr:
-        data = [seq.strip() for seq in fr.readlines()[1::2]]
+        # data = [seq.strip() for seq in fr.readlines()[1::2]]
+        data = fr.read()
     
     # Creates output file and writes appropriate response to file and notifies user
     with open(FILEPATHWRITE, "w") as fw:
